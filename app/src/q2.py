@@ -102,7 +102,7 @@ def q2_with_dataframe_api(spark):
             F.col("cnt").alias("#"),
             F.round("percentage", 1).alias("%")
         )
-        .orderBy("year", F.desc("#"))
+        .orderBy(F.desc("year"), F.desc("#"))
     )
     
     result.show(200, truncate=False)
@@ -158,7 +158,7 @@ def q2_with_sql_api(spark):
     LEFT JOIN re_codes rc
       ON r.vict_descent = rc.vict_descent
     WHERE r.rank <= 3
-    ORDER BY r.year, `#` DESC
+    ORDER BY r.year DESC, `#` DESC
     """
 
     result = spark.sql(query)
