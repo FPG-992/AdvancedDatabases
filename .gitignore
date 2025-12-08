@@ -1,3 +1,4 @@
 example_data/
 project_data/
 intro_notebooks/
+*.log
