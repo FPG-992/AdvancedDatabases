@@ -1,3 +1,2 @@
 docker compose up -d   
-docker compose exec spark-master bash 
-./run_all.sh
+docker compose exec -it spark-master bash -c "cd /app && ./run_all.sh"
