@@ -1,196 +1,239 @@
-import argparse
+import os
 import time
+import argparse
+from spark_utils import get_spark
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
-from spark_utils import get_spark
 
-CRIME_DATA_PATH = [
-    "/data/LA_Crime_Data/LA_Crime_Data_2010_2019.csv",
-    "/data/LA_Crime_Data/LA_Crime_Data_2020_2025.csv",
+
+DATA_PATH = './data'
+CRIME_DATA_PATHS = [
+    os.path.join(DATA_PATH, "LA-Crime", "LA_Crime_Data_2010_2019.csv"),
+    os.path.join(DATA_PATH, "LA-Crime", "LA_Crime_Data_2020_2025.csv"),
 ]
-RE_CODES_PATH = "/data/RE_codes.csv"
+
 
 def load_data(spark):
-    df = (
+    """
+    Loads the necessary datasets for Query 2.
+
+    1. Crime Data: Loads both the 2010-2019 and 2020-Present datasets.
+    2. Race/Ethnicity Codes: Loads the lookup table to resolve Descent codes (e.g., 'H') 
+       to full names (e.g., 'Hispanic/Latin/Mexican').
+
+    Args:
+        spark (SparkSession): The active Spark session.
+
+    Returns:
+        tuple: A tuple containing (crime_df, re_codes_df).
+    """
+    crime_df = (
         spark.read
         .option("header", "true")
         .option("inferSchema", "true")
-        .csv(CRIME_DATA_PATH)
+        .csv(CRIME_DATA_PATHS)
     )
 
-    df = df.filter(
-        F.col("Vict Descent").isNotNull()
-        & (F.col("Vict Descent") != "")
-        & F.col("DATE OCC").isNotNull()
-        & (F.col("DATE OCC") != "")
-    )
-
-    df = df.withColumn(
-        "year",
-        F.year(F.to_timestamp("DATE OCC", "yyyy MMM dd hh:mm:ss a"))
-    )
-
-    df = df.filter(F.col("year").isNotNull())
-
-    df = df.select(
-        F.col("year").cast("int"),
-        F.col("Vict Descent").alias("vict_descent")
-    )
-
-    return df
-
-def load_re_codes(spark):
     re_codes_df = (
         spark.read
         .option("header", "true")
         .option("inferSchema", "true")
-        .csv(RE_CODES_PATH)
+        .csv("data/RE_codes.csv")
     )
 
-    cols = re_codes_df.columns
-    if len(cols) < 2 :
-        raise ValueError("RE_codes.csv must have at least two columns(Codes and Description)")
+    return crime_df, re_codes_df
+
+
+def query_dataframe_api(crime_df, re_codes_df):
+    """
+    Implementation 1: DataFrame API (DSL).
+
+    This function calculates the top 3 victim descent groups per year using 
+    Spark's Window functions.
     
-    re_codes_df = re_codes_df.select(
-        F.col(cols[0]).alias("vict_descent"),
-        F.col(cols[1]).alias("vict_desc")
+    Logic Steps:
+    1. Join Crime Data with Race Codes.
+    2. Extract the Year from 'DATE OCC'.
+    3. Calculate the Total Victims per Year (Window Partitioned by Year).
+    4. Rank the Descent groups by count descending (Window Partitioned by Year).
+    5. Filter for Rank <= 3.
+
+    Args:
+        crime_df (DataFrame): The raw crime data.
+        re_codes_df (DataFrame): The race/ethnicity lookup table.
+
+    Returns:
+        float: Execution duration in seconds.
+    """
+    print("--- Running: DataFrame API ---")
+    start_time = time.time()
+
+    # Extract Year and Join with Race Codes
+    joined_df = (
+        crime_df
+        .withColumn("year", F.substring(F.col("DATE OCC"), 1, 4))
+        .join(re_codes_df, on="Vict Descent", how="inner")
     )
 
-    return re_codes_df
+    # Count victims per Year and Descent
+    counts_df = joined_df.groupBy("year", "Vict Descent Full").count()
 
-def q2_with_dataframe_api(spark):
-    crimes = load_data(spark)
-    re_codes = load_re_codes(spark) 
+    # Look at ALL rows for a specific year (virtual "bucket") to calculate the total sum
+    window_total = Window.partitionBy("year")
 
-    #1 we count victims per year and descent
-    agg = (
-        crimes
-        .groupBy("year", "vict_descent")
-        .agg(F.count(F.lit(1)).alias("cnt"))
+    # Look at all rows for a year, ordered by count descending (for ranking)
+    window_rank = Window.partitionBy("year").orderBy(F.desc("count"))
+
+    # Apply Windows
+    processed_df = (
+        counts_df
+        .withColumn("total_victims_year", F.sum("count").over(window_total))
+        .withColumn("rank", F.row_number().over(window_rank))   # Rank (1st, 2nd, 3rd...)
+        .withColumn("percentage", F.format_number((F.col("count") / F.col("total_victims_year")) * 100, 2))
     )
 
-    #total victims per year
-    total = (
-        agg
-        .groupBy("year")
-        .agg(F.sum("cnt").alias("total_cnt"))
-    )
-
-    #calculating percentage
-    percentage = (
-        agg.join(total, on="year")
-        .withColumn("percentage", F.col("cnt") * 100.0 / F.col("total_cnt"))
-    )
-
-
-    #ranking per year (top 3 groups)
-    window = Window.partitionBy("year").orderBy(F.desc("cnt"))
-
-    ranked = (
-        percentage
-        .withColumn("rank", F.rank().over(window))
+    # Filter for Top 3 and Sort
+    result_df = (
+        processed_df
         .filter(F.col("rank") <= 3)
-    )
-
-    # join with re_codes to get description for gender descent
-    result = (
-        ranked
-        .join(re_codes, on="vict_descent", how="left")
+        .orderBy(F.desc("year"), F.col("rank"))
         .select(
-            "year",
-            F.coalesce(F.col("vict_desc"), F.col("vict_descent")).alias("Victim Descent"),
-            F.col("cnt").alias("#"),
-            F.round("percentage", 1).alias("%")
+            F.col("year"),
+            F.col("Vict Descent Full").alias("Victim Descent"),
+            F.col("count").alias("#"),
+            F.col("percentage").alias("%")
         )
-        .orderBy(F.desc("year"), F.desc("#"))
     )
+
+    # Trigger Action
+    result_df.show(10, truncate=False)
     
-    result.show(200, truncate=False)
+    duration = time.time() - start_time
 
-def q2_with_sql_api(spark):
-    crimes = load_data(spark)
-    re_codes = load_re_codes(spark)
+    return duration
 
-    crimes.createOrReplaceTempView("crimes")
-    re_codes.createOrReplaceTempView("re_codes")
 
+def query_sql_api(spark, crime_df, re_codes_df):
+    """
+    Implementation 2: SQL API.
+
+    This performs the exact same logic as the DataFrame implementation but using 
+    Spark SQL queries. This is useful for comparing optimization plans, though 
+    Catalyst usually produces identical plans for both APIs.
+
+    Logic Steps:
+    1. Registers temporary views.
+    2. Uses Common Table Expressions (WITH clauses) to Step-by-Step:
+       - Join & Extract Year.
+       - Group Counts.
+       - Calculate Window Stats (Total & Rank).
+       - Select & Format Final Output.
+
+    Args:
+        spark (SparkSession): The active Spark session.
+        crime_df (DataFrame): The raw crime data.
+        re_codes_df (DataFrame): The race/ethnicity lookup table.
+
+    Returns:
+        float: Execution duration in seconds.
+    """
+    print("--- Running: SQL API ---")
+    start_time = time.time()
+
+    # Register Temporary Views
+    crime_df.createOrReplaceTempView("crime_data")
+    re_codes_df.createOrReplaceTempView("re_codes")
+
+    # Execute SQL Query
     query = """
-    WITH agg AS (
-        SELECT
-            year,
-            vict_descent,
-            COUNT(*) AS cnt
-        FROM crimes
-        GROUP BY year, vict_descent
+    WITH 
+    -- Step 1: Join and Extract Year
+    JoinedData AS (
+        SELECT 
+            substring(c.`DATE OCC`, 1, 4) as year,
+            r.`Vict Descent Full` as descent
+        FROM crime_data c
+        JOIN re_codes r ON c.`Vict Descent` = r.`Vict Descent`
+        WHERE c.`Vict Descent` IS NOT NULL
     ),
-    total AS (
-        SELECT
-            year,
-            SUM(cnt) AS total
-        FROM agg
-        GROUP BY year
+
+    -- Step 2: Basic Group By Counts
+    GroupedCounts AS (
+        SELECT year, descent, COUNT(*) as victims_count
+        FROM JoinedData
+        GROUP BY year, descent
     ),
-    pct AS (
-        SELECT
-            a.year,
-            a.vict_descent,
-            a.cnt,
-            a.cnt * 100.0 / t.total AS percentage
-        FROM agg a
-        JOIN total t
-          ON a.year = t.year
-    ),
-    ranked AS (
-        SELECT
-            year,
-            vict_descent,
-            cnt,
-            percentage,
-            RANK() OVER (PARTITION BY year ORDER BY cnt DESC) AS rank
-        FROM pct
+    
+    -- Step 3: Window Functions (Sum Total & Rank)
+    WindowedCalc AS (
+        SELECT 
+            year, 
+            descent, 
+            victims_count,
+            SUM(victims_count) OVER (PARTITION BY year) as total_year,
+            ROW_NUMBER() OVER (PARTITION BY year ORDER BY victims_count DESC) as rn
+        FROM GroupedCounts
     )
-    SELECT
-        r.year,
-        COALESCE(rc.vict_desc, r.vict_descent) AS `Victim Descent`,
-        r.cnt AS `#`,
-        ROUND(r.percentage, 1) AS `%`
-    FROM ranked r
-    LEFT JOIN re_codes rc
-      ON r.vict_descent = rc.vict_descent
-    WHERE r.rank <= 3
-    ORDER BY r.year DESC, `#` DESC
+
+    -- Step 4: Final Selection and Formatting
+    SELECT 
+        year, 
+        descent as `Victim Descent`, 
+        victims_count as `#`, 
+        ROUND((victims_count / total_year) * 100, 2) as `%`
+    FROM WindowedCalc
+    WHERE rn <= 3
+    ORDER BY year DESC, `#` DESC
     """
 
-    result = spark.sql(query)
-    result.show(200, truncate=False)
+    result_df = spark.sql(query)
+    
+    # Trigger Action
+    result_df.show(10, truncate=False)
+
+    duration = time.time() - start_time
+
+    return duration
+
 
 def main():
-    parser = argparse.ArgumentParser(description="Query 2")
+    """
+    Main entry point for Query 2 Benchmarking.
+    
+    1. Parses the '--impl' argument to choose betwen 'df' (DataFrame) or 'sql' (SQL).
+    2. Initializes Spark with the assignment-mandated resources:
+       - 4 Executors
+       - 1 Core per executor
+       - 2GB Memory per executor
+    3. Runs the chosen implementation and prints the execution time.
+    """
+    parser = argparse.ArgumentParser(description="Query 2 Benchmark")
     parser.add_argument(
         "--impl",
-        type=str,
-        choices=["dataframe", "sql"],
+        choices=["df", "sql"],
         required=True,
-        help="Implementation to run: dataframe or sql",
+        help="Implementation: 'df' or 'sql'"
     )
     args = parser.parse_args()
 
     spark = get_spark(
-        app_name=f"advdb-q2-{args.impl}",
+        app_name="Query 2",
         instances=4,
         cores=1,
-        memory="2g",
+        memory="2g"
     )
 
-    t0 = time.time()
-    if args.impl == "dataframe":
-        q2_with_dataframe_api(spark)
-    else:
-        q2_with_sql_api(spark)
-    t1 = time.time()
+    crime_df, re_codes_df = load_data(spark)
 
-    print(f"Execution time for {args.impl}: {t1 - t0:.5f} seconds")
+    if args.impl == "df":
+        duration = query_dataframe_api(crime_df, re_codes_df)
+    else:
+        duration = query_sql_api(spark, crime_df, re_codes_df)
+
+    print(f"Execution Time ({args.impl}): {duration:.4f} seconds")
+    
     spark.stop()
+
 
 if __name__ == "__main__":
     main()
