@@ -166,7 +166,7 @@ def load_mo_codes_rdd(spark):
     (`split`, `strip`) applied via `.map()` instead of Spark SQL expressions.
     """
     lines = (
-        spark.read.text(MO_CODES_PATH)
+        spark.read.text(get_mo_codes_path())
         .rdd
         .map(lambda row: row["value"])
         .filter(lambda line: line is not None and line.strip() != "")
