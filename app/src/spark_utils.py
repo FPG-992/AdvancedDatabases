@@ -1,3 +1,4 @@
+import os
 from pyspark.sql import SparkSession
 
 
@@ -5,6 +6,19 @@ from pyspark.sql import SparkSession
 # Port 7077 is the default port for the Spark Standalone Cluster Manager.
 # This tells the driver program where to request resources to run the job.
 SPARK_MASTER = "spark://spark-master:7077"
+
+# Data path configuration - HDFS is the default storage
+HDFS_NAMENODE = "hdfs://namenode:9000"
+DATA_PATH = f"{HDFS_NAMENODE}/data"
+
+def get_data_path():
+    """
+    Returns the HDFS data path.
+    
+    Returns:
+        str: HDFS path (hdfs://namenode:9000/data)
+    """
+    return DATA_PATH
 
 
 def get_spark(
@@ -17,7 +31,9 @@ def get_spark(
     Initializes a SparkSession with specific resource constraints for benchmarking.
 
     This function acts as a wrapper around the SparkSession builder. It is designed 
-    to programmatically set the number of executors, cores, and memory allocation. 
+    to programmatically set the number of executors, cores, and memory allocation.
+    
+    Uses HDFS (hdfs://namenode:9000) for distributed data storage.
 
     Args:
         app_name (str): The name of the application as it will appear in the Spark UI. 
@@ -36,7 +52,12 @@ def get_spark(
         .config("spark.executor.cores", cores)
         .config("spark.executor.memory", memory)
         .config("spark.sql.shuffle.partitions", str(instances * cores * 4))
+        .config("spark.hadoop.fs.defaultFS", HDFS_NAMENODE)
         .getOrCreate()
     )
+    
+    # Log storage configuration
+    print(f"=== Storage Mode: HDFS ===")
+    print(f"=== Data Path: {get_data_path()} ===")
 
     return spark

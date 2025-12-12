@@ -9,8 +9,6 @@ CURRENT_LOG_DIR="$LOG_BASE_DIR/run_$TIMESTAMP"
 
 SEDONA_PACKAGES="org.apache.sedona:sedona-spark-3.5_2.12:1.8.0,org.datasyslab:geotools-wrapper:1.8.0-33.1"
 
-# Use local filesystem (data is mounted at /data)
-export DATA_PATH=${DATA_PATH:-"/data"}
 SPARK_COMMON_ARGS=()
 
 RED='\033[0;31m'
@@ -20,6 +18,8 @@ YELLOW='\033[1;33m'
 NC='\033[0m' 
 
 mkdir -p "$CURRENT_LOG_DIR"
+
+echo -e "${GREEN}=== Storage Mode: HDFS (hdfs://namenode:9000/data) ===${NC}"
 
 print_header() {
     echo -e "\n${CYAN}======================================================${NC}"

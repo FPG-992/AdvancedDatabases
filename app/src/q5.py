@@ -2,18 +2,26 @@ import os
 import time
 import math
 import argparse
-from spark_utils import get_spark
+from spark_utils import get_spark, get_data_path
 from sedona.register import SedonaRegistrator
 from pyspark.sql import functions as F
 
 
-DATA_PATH = os.environ.get("DATA_PATH", "/data")
-CRIME_DATA_PATHS = [
-    os.path.join(DATA_PATH, "LA_Crime_Data", "LA_Crime_Data_2010_2019.csv"),
-    os.path.join(DATA_PATH, "LA_Crime_Data", "LA_Crime_Data_2020_2025.csv"),
-]
-CENSUS_GEO_PATH = os.path.join(DATA_PATH, "LA_Census_Blocks_2020.geojson")
-INCOME_PATH = os.path.join(DATA_PATH, "LA_income_2021.csv")
+def get_crime_data_paths():
+    """Returns crime data paths based on storage configuration (HDFS or local)."""
+    data_path = get_data_path()
+    return [
+        f"{data_path}/LA_Crime_Data/LA_Crime_Data_2010_2019.csv",
+        f"{data_path}/LA_Crime_Data/LA_Crime_Data_2020_2025.csv",
+    ]
+
+def get_census_geo_path():
+    """Returns census blocks GeoJSON path based on storage configuration."""
+    return f"{get_data_path()}/LA_Census_Blocks_2020.geojson"
+
+def get_income_path():
+    """Returns income data path based on storage configuration."""
+    return f"{get_data_path()}/LA_income_2021.csv"
 
 
 def load_crimes_2020_2021(spark):
@@ -33,7 +41,7 @@ def load_crimes_2020_2021(spark):
         spark.read
         .option("header", "true")
         .option("inferSchema", "true")
-        .csv(CRIME_DATA_PATHS)
+        .csv(get_crime_data_paths())
     )
 
     df = df.filter(
@@ -82,7 +90,7 @@ def load_blocks_comm_zip(spark):
     Returns:
         DataFrame: Columns ['COMM', 'zip_code', 'population', 'geom']
     """
-    raw_df = spark.read.option("multiline", "true").json(CENSUS_GEO_PATH)
+    raw_df = spark.read.option("multiline", "true").json(get_census_geo_path())
 
     if "features" in raw_df.columns:
         df = raw_df.select(F.explode(F.col("features")).alias("feature"))
@@ -126,7 +134,7 @@ def load_income_2021_by_zip(spark):
         spark.read
         .option("header", "true")
         .option("sep", ";")
-        .csv(INCOME_PATH)
+        .csv(get_income_path())
     )
 
     income_df = income_df.select(

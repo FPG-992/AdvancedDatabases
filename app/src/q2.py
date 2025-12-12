@@ -1,16 +1,18 @@
 import os
 import time
 import argparse
-from spark_utils import get_spark
+from spark_utils import get_spark, get_data_path
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
 
-DATA_PATH = os.environ.get("DATA_PATH", "/data")
-CRIME_DATA_PATHS = [
-    os.path.join(DATA_PATH, "LA_Crime_Data", "LA_Crime_Data_2010_2019.csv"),
-    os.path.join(DATA_PATH, "LA_Crime_Data", "LA_Crime_Data_2020_2025.csv"),
-]
+def get_crime_data_paths():
+    """Returns crime data paths based on storage configuration (HDFS or local)."""
+    data_path = get_data_path()
+    return [
+        f"{data_path}/LA_Crime_Data/LA_Crime_Data_2010_2019.csv",
+        f"{data_path}/LA_Crime_Data/LA_Crime_Data_2020_2025.csv",
+    ]
 
 
 def load_data(spark):
@@ -31,14 +33,14 @@ def load_data(spark):
         spark.read
         .option("header", "true")
         .option("inferSchema", "true")
-        .csv(CRIME_DATA_PATHS)
+        .csv(get_crime_data_paths())
     )
 
     re_codes_df = (
         spark.read
         .option("header", "true")
         .option("inferSchema", "true")
-        .csv(os.path.join(DATA_PATH, "RE_codes.csv"))
+        .csv(f"{get_data_path()}/RE_codes.csv")
     )
 
     return crime_df, re_codes_df

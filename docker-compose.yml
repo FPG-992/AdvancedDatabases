@@ -1,16 +1,67 @@
 services:
+  # ==================== HDFS SERVICES ====================
+  namenode:
+    build:
+      context: .
+      dockerfile: Dockerfile.hadoop
+    container_name: namenode
+    hostname: namenode
+    command: >
+      bash -c "
+        if [ ! -f /hadoop/dfs/name/current/VERSION ]; then
+          hdfs namenode -format -force
+        fi
+        hdfs namenode
+      "
+    environment:
+      - CLUSTER_NAME=advdb-cluster
+    ports:
+      - "9870:9870"   # NameNode Web UI
+      - "9000:9000"   # HDFS RPC
+    volumes:
+      - namenode_data:/hadoop/dfs/name
+      - ./project_data:/project_data:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9870"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  datanode:
+    build:
+      context: .
+      dockerfile: Dockerfile.hadoop
+    container_name: datanode
+    hostname: datanode
+    command: hdfs datanode
+    depends_on:
+      namenode:
+        condition: service_healthy
+    environment:
+      - SERVICE_PRECONDITION=namenode:9870
+    ports:
+      - "9864:9864"   # DataNode Web UI
+    volumes:
+      - datanode_data:/hadoop/dfs/data
+
+  # ==================== SPARK SERVICES ====================
   spark-master:
     build: .
     container_name: spark-master
     hostname: spark-master
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+    depends_on:
+      namenode:
+        condition: service_healthy
     environment:
       - SPARK_MASTER_HOST=spark-master
       - SPARK_MASTER_PORT=7077
       - SPARK_MASTER_WEBUI_PORT=8080
+      - HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop
     ports:
       - "7077:7077"   # Spark master
       - "8080:8080"   # Spark master UI
+      - "4040:4040"   # Spark Application UI
     volumes:
       - ./app:/app
       - ./project_data:/data
@@ -26,8 +77,13 @@ services:
       - SPARK_WORKER_CORES=8
       - SPARK_WORKER_MEMORY=16g
       - SPARK_WORKER_WEBUI_PORT=8081
+      - HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop
     ports:
       - "8081:8081"   # Worker UI
     volumes:
       - ./app:/app
       - ./project_data:/data
+
+volumes:
+  namenode_data:
+  datanode_data:
