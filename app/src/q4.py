@@ -7,10 +7,10 @@ from pyspark.sql import SparkSession, functions as F
 from pyspark.sql.window import Window
 
 
-DATA_PATH = './data'
+DATA_PATH = os.environ.get("DATA_PATH", "/data")
 CRIME_DATA_PATHS = [
-    os.path.join(DATA_PATH, "LA-Crime", "LA_Crime_Data_2010_2019.csv"),
-    os.path.join(DATA_PATH, "LA-Crime", "LA_Crime_Data_2020_2025.csv"),
+    os.path.join(DATA_PATH, "LA_Crime_Data", "LA_Crime_Data_2010_2019.csv"),
+    os.path.join(DATA_PATH, "LA_Crime_Data", "LA_Crime_Data_2020_2025.csv"),
 ]
 POLICE_STATIONS_PATH = os.path.join(DATA_PATH, "LA_Police_Stations.csv")
 
@@ -157,9 +157,10 @@ def main():
     run_q4(spark)
     end = time.time()
 
+    # Use consistent wording so run_all.sh summary (grep "Execution time") picks it up.
     print(
-        f"Q4 runtime (realistic distances): instances={args.instances}, "
-        f"cores={args.cores}, memory={args.memory} -> {end - start:.2f} sec"
+        f"Execution time (q4 realistic distances): instances={args.instances}, "
+        f"cores={args.cores}, memory={args.memory}: {end - start:.2f} seconds"
     )
 
     spark.stop()

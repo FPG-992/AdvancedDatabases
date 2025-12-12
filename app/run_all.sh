@@ -9,6 +9,10 @@ CURRENT_LOG_DIR="$LOG_BASE_DIR/run_$TIMESTAMP"
 
 SEDONA_PACKAGES="org.apache.sedona:sedona-spark-3.5_2.12:1.8.0,org.datasyslab:geotools-wrapper:1.8.0-33.1"
 
+# Use local filesystem (data is mounted at /data)
+export DATA_PATH=${DATA_PATH:-"/data"}
+SPARK_COMMON_ARGS=()
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
@@ -35,6 +39,7 @@ run_spark_job() {
 
     "$SPARK_SUBMIT" \
         --master "$SPARK_MASTER" \
+        "${SPARK_COMMON_ARGS[@]}" \
         "${args[@]}" \
         "$APP_DIR/$script_name" \
         2>&1 | tee "$CURRENT_LOG_DIR/$log_name.log"
@@ -45,13 +50,13 @@ run_q1() {
     local res_args=("--instances" "4" "--cores" "1" "--memory" "2g")
 
     # 1. DataFrame No UDF
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q1.py" --impl create_age_groups_no_udf 2>&1 | tee "$CURRENT_LOG_DIR/q1_df_no_udf.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q1.py" --impl create_age_groups_no_udf 2>&1 | tee "$CURRENT_LOG_DIR/q1_df_no_udf.log"
     
     # 2. DataFrame UDF
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q1.py" --impl create_age_groups_with_udf 2>&1 | tee "$CURRENT_LOG_DIR/q1_df_udf.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q1.py" --impl create_age_groups_with_udf 2>&1 | tee "$CURRENT_LOG_DIR/q1_df_udf.log"
 
     # 3. RDD
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q1.py" --impl create_age_groups_rdd_api 2>&1 | tee "$CURRENT_LOG_DIR/q1_rdd.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q1.py" --impl create_age_groups_rdd_api 2>&1 | tee "$CURRENT_LOG_DIR/q1_rdd.log"
 }
 
 run_q2() {
@@ -59,10 +64,10 @@ run_q2() {
     # Specs: 4 executors, 1 core, 2GB
     
     # 1. DataFrame
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q2.py" --impl dataframe 2>&1 | tee "$CURRENT_LOG_DIR/q2_dataframe.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q2.py" --impl df 2>&1 | tee "$CURRENT_LOG_DIR/q2_dataframe.log"
 
     # 2. SQL
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q2.py" --impl sql 2>&1 | tee "$CURRENT_LOG_DIR/q2_sql.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q2.py" --impl sql 2>&1 | tee "$CURRENT_LOG_DIR/q2_sql.log"
 }
 
 run_q3() {
@@ -70,19 +75,19 @@ run_q3() {
     # Specs: 4 executors, 1 core, 2GB
 
     # 1. RDD
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q3.py" --impl rdd 2>&1 | tee "$CURRENT_LOG_DIR/q3_rdd.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q3.py" --impl rdd 2>&1 | tee "$CURRENT_LOG_DIR/q3_rdd.log"
 
     # 2. DataFrame (Default/Broadcast)
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q3.py" --impl dataframe --join_hint broadcast 2>&1 | tee "$CURRENT_LOG_DIR/q3_df_broadcast.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q3.py" --impl df --join_hint broadcast 2>&1 | tee "$CURRENT_LOG_DIR/q3_df_broadcast.log"
 
     # 3. DataFrame (Merge)
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q3.py" --impl dataframe --join_hint merge 2>&1 | tee "$CURRENT_LOG_DIR/q3_df_merge.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q3.py" --impl df --join_hint merge 2>&1 | tee "$CURRENT_LOG_DIR/q3_df_merge.log"
 
     # 4. DataFrame (Shuffle Hash)
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q3.py" --impl dataframe --join_hint shuffle_hash 2>&1 | tee "$CURRENT_LOG_DIR/q3_df_shuffle_hash.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q3.py" --impl df --join_hint shuffle_hash 2>&1 | tee "$CURRENT_LOG_DIR/q3_df_shuffle_hash.log"
 
     # 5. DataFrame (Shuffle Replicate NL - Cartesian)
-    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "$APP_DIR/q3.py" --impl dataframe --join_hint shuffle_replicate_nl 2>&1 | tee "$CURRENT_LOG_DIR/q3_df_cartesian.log"
+    "$SPARK_SUBMIT" --master "$SPARK_MASTER" "${SPARK_COMMON_ARGS[@]}" "$APP_DIR/q3.py" --impl df --join_hint shuffle_replicate_nl 2>&1 | tee "$CURRENT_LOG_DIR/q3_df_cartesian.log"
 }
 
 run_q4() {
@@ -91,16 +96,19 @@ run_q4() {
     # Config 1: 2 executors, 1 core, 2GB
     echo -e "${YELLOW}Config 1: 2 Exec, 1 Core, 2GB${NC}"
     "$SPARK_SUBMIT" --master "$SPARK_MASTER" --packages "$SEDONA_PACKAGES" \
+        "${SPARK_COMMON_ARGS[@]}" \
         "$APP_DIR/q4.py" --instances 2 --cores 1 --memory 2g 2>&1 | tee "$CURRENT_LOG_DIR/q4_cfg1.log"
 
     # Config 2: 2 executors, 2 cores, 4GB
     echo -e "${YELLOW}Config 2: 2 Exec, 2 Cores, 4GB${NC}"
     "$SPARK_SUBMIT" --master "$SPARK_MASTER" --packages "$SEDONA_PACKAGES" \
+        "${SPARK_COMMON_ARGS[@]}" \
         "$APP_DIR/q4.py" --instances 2 --cores 2 --memory 4g 2>&1 | tee "$CURRENT_LOG_DIR/q4_cfg2.log"
 
     # Config 3: 2 executors, 4 cores, 8GB
     echo -e "${YELLOW}Config 3: 2 Exec, 4 Cores, 8GB${NC}"
     "$SPARK_SUBMIT" --master "$SPARK_MASTER" --packages "$SEDONA_PACKAGES" \
+        "${SPARK_COMMON_ARGS[@]}" \
         "$APP_DIR/q4.py" --instances 2 --cores 4 --memory 8g 2>&1 | tee "$CURRENT_LOG_DIR/q4_cfg3.log"
 }
 
@@ -110,16 +118,19 @@ run_q5() {
     # Config 1: 2 executors, 4 cores, 8GB
     echo -e "${YELLOW}Config 1: 2 Exec, 4 Cores, 8GB${NC}"
     "$SPARK_SUBMIT" --master "$SPARK_MASTER" --packages "$SEDONA_PACKAGES" \
+        "${SPARK_COMMON_ARGS[@]}" \
         "$APP_DIR/q5.py" --instances 2 --cores 4 --memory 8g 2>&1 | tee "$CURRENT_LOG_DIR/q5_cfg1.log"
 
     # Config 2: 4 executors, 2 cores, 4GB
     echo -e "${YELLOW}Config 2: 4 Exec, 2 Cores, 4GB${NC}"
     "$SPARK_SUBMIT" --master "$SPARK_MASTER" --packages "$SEDONA_PACKAGES" \
+        "${SPARK_COMMON_ARGS[@]}" \
         "$APP_DIR/q5.py" --instances 4 --cores 2 --memory 4g 2>&1 | tee "$CURRENT_LOG_DIR/q5_cfg2.log"
 
     # Config 3: 8 executors, 1 core, 2GB
     echo -e "${YELLOW}Config 3: 8 Exec, 1 Core, 2GB${NC}"
     "$SPARK_SUBMIT" --master "$SPARK_MASTER" --packages "$SEDONA_PACKAGES" \
+        "${SPARK_COMMON_ARGS[@]}" \
         "$APP_DIR/q5.py" --instances 8 --cores 1 --memory 2g 2>&1 | tee "$CURRENT_LOG_DIR/q5_cfg3.log"
 }
 

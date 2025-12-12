@@ -6,10 +6,10 @@ from pyspark.sql import functions as F
 from pyspark.sql import Row
 
 
-DATA_PATH = './data'
+DATA_PATH = os.environ.get("DATA_PATH", "/data")
 CRIME_DATA_PATHS = [
-    os.path.join(DATA_PATH, "LA-Crime", "LA_Crime_Data_2010_2019.csv"),
-    os.path.join(DATA_PATH, "LA-Crime", "LA_Crime_Data_2020_2025.csv"),
+    os.path.join(DATA_PATH, "LA_Crime_Data", "LA_Crime_Data_2010_2019.csv"),
+    os.path.join(DATA_PATH, "LA_Crime_Data", "LA_Crime_Data_2020_2025.csv"),
 ]
 
 
