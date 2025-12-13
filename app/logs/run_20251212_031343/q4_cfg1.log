@@ -1,0 +1,823 @@
+:: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /root/.ivy2/cache
+The jars for the packages stored in: /root/.ivy2/jars
+org.apache.sedona#sedona-spark-3.5_2.12 added as a dependency
+org.datasyslab#geotools-wrapper added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-156c43f1-c4eb-4fc1-ad6a-fb20bfaa7cf2;1.0
+	confs: [default]
+	found org.apache.sedona#sedona-spark-3.5_2.12;1.8.0 in central
+	found org.apache.sedona#sedona-common;1.8.0 in central
+	found org.apache.commons#commons-math3;3.6.1 in central
+	found org.locationtech.jts#jts-core;1.20.0 in central
+	found org.wololo#jts2geojson;0.16.1 in central
+	found org.locationtech.spatial4j#spatial4j;0.8 in central
+	found org.datasyslab#s2-geometry-library;20250620-rc1 in central
+	found com.google.errorprone#error_prone_annotations;2.19.1 in central
+	found com.google.guava#guava;33.4.7-jre in central
+	found com.google.guava#failureaccess;1.0.3 in central
+	found com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava in central
+	found org.jspecify#jspecify;1.0.0 in central
+	found com.google.j2objc#j2objc-annotations;3.0.0 in central
+	found com.google.jsinterop#jsinterop-annotations;2.0.0 in central
+	found it.unimi.dsi#fastutil;8.5.15 in central
+	found com.uber#h3;4.1.1 in central
+	found net.sf.geographiclib#GeographicLib-Java;1.52 in central
+	found com.github.ben-manes.caffeine#caffeine;2.9.2 in central
+	found org.checkerframework#checker-qual;3.10.0 in central
+	found org.apache.sedona#sedona-spark-common-3.5_2.12;1.8.0 in central
+	found org.apache.sedona#shade-proto;1.8.0 in central
+	found org.xerial#sqlite-jdbc;3.41.2.2 in central
+	found io.graphframes#graphframes-spark3_2.12;0.9.2 in central
+	found org.scala-lang.modules#scala-collection-compat_2.12;2.5.0 in central
+	found org.beryx#awt-color-factory;1.0.0 in central
+	found com.wherobots#jpostal;1.2.2 in central
+	found org.datasyslab#geotools-wrapper;1.8.0-33.1 in central
+downloading https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-3.5_2.12/1.8.0/sedona-spark-3.5_2.12-1.8.0.jar ...
+	[SUCCESSFUL ] org.apache.sedona#sedona-spark-3.5_2.12;1.8.0!sedona-spark-3.5_2.12.jar (90ms)
+downloading https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.8.0-33.1/geotools-wrapper-1.8.0-33.1.jar ...
+	[SUCCESSFUL ] org.datasyslab#geotools-wrapper;1.8.0-33.1!geotools-wrapper.jar (1229ms)
+downloading https://repo1.maven.org/maven2/org/apache/sedona/sedona-common/1.8.0/sedona-common-1.8.0.jar ...
+	[SUCCESSFUL ] org.apache.sedona#sedona-common;1.8.0!sedona-common.jar (127ms)
+downloading https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-common-3.5_2.12/1.8.0/sedona-spark-common-3.5_2.12-1.8.0.jar ...
+	[SUCCESSFUL ] org.apache.sedona#sedona-spark-common-3.5_2.12;1.8.0!sedona-spark-common-3.5_2.12.jar (239ms)
+downloading https://repo1.maven.org/maven2/org/locationtech/jts/jts-core/1.20.0/jts-core-1.20.0.jar ...
+	[SUCCESSFUL ] org.locationtech.jts#jts-core;1.20.0!jts-core.jar(bundle) (97ms)
+downloading https://repo1.maven.org/maven2/org/wololo/jts2geojson/0.16.1/jts2geojson-0.16.1.jar ...
+	[SUCCESSFUL ] org.wololo#jts2geojson;0.16.1!jts2geojson.jar (44ms)
+downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.12/2.5.0/scala-collection-compat_2.12-2.5.0.jar ...
+	[SUCCESSFUL ] org.scala-lang.modules#scala-collection-compat_2.12;2.5.0!scala-collection-compat_2.12.jar (75ms)
+downloading https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar ...
+	[SUCCESSFUL ] org.apache.commons#commons-math3;3.6.1!commons-math3.jar (127ms)
+downloading https://repo1.maven.org/maven2/org/locationtech/spatial4j/spatial4j/0.8/spatial4j-0.8.jar ...
+	[SUCCESSFUL ] org.locationtech.spatial4j#spatial4j;0.8!spatial4j.jar(bundle) (53ms)
+downloading https://repo1.maven.org/maven2/org/datasyslab/s2-geometry-library/20250620-rc1/s2-geometry-library-20250620-rc1.jar ...
+	[SUCCESSFUL ] org.datasyslab#s2-geometry-library;20250620-rc1!s2-geometry-library.jar (91ms)
+downloading https://repo1.maven.org/maven2/com/uber/h3/4.1.1/h3-4.1.1.jar ...
+	[SUCCESSFUL ] com.uber#h3;4.1.1!h3.jar (91ms)
+downloading https://repo1.maven.org/maven2/net/sf/geographiclib/GeographicLib-Java/1.52/GeographicLib-Java-1.52.jar ...
+	[SUCCESSFUL ] net.sf.geographiclib#GeographicLib-Java;1.52!GeographicLib-Java.jar (51ms)
+downloading https://repo1.maven.org/maven2/com/github/ben-manes/caffeine/caffeine/2.9.2/caffeine-2.9.2.jar ...
+	[SUCCESSFUL ] com.github.ben-manes.caffeine#caffeine;2.9.2!caffeine.jar (82ms)
+downloading https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.19.1/error_prone_annotations-2.19.1.jar ...
+	[SUCCESSFUL ] com.google.errorprone#error_prone_annotations;2.19.1!error_prone_annotations.jar (57ms)
+downloading https://repo1.maven.org/maven2/com/google/guava/guava/33.4.7-jre/guava-33.4.7-jre.jar ...
+	[SUCCESSFUL ] com.google.guava#guava;33.4.7-jre!guava.jar(bundle) (161ms)
+downloading https://repo1.maven.org/maven2/com/google/jsinterop/jsinterop-annotations/2.0.0/jsinterop-annotations-2.0.0.jar ...
+	[SUCCESSFUL ] com.google.jsinterop#jsinterop-annotations;2.0.0!jsinterop-annotations.jar (47ms)
+downloading https://repo1.maven.org/maven2/it/unimi/dsi/fastutil/8.5.15/fastutil-8.5.15.jar ...
+	[SUCCESSFUL ] it.unimi.dsi#fastutil;8.5.15!fastutil.jar (963ms)
+downloading https://repo1.maven.org/maven2/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar ...
+	[SUCCESSFUL ] com.google.guava#failureaccess;1.0.3!failureaccess.jar (44ms)
+downloading https://repo1.maven.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar ...
+	[SUCCESSFUL ] com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava!listenablefuture.jar (42ms)
+downloading https://repo1.maven.org/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar ...
+	[SUCCESSFUL ] org.jspecify#jspecify;1.0.0!jspecify.jar (47ms)
+downloading https://repo1.maven.org/maven2/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar ...
+	[SUCCESSFUL ] com.google.j2objc#j2objc-annotations;3.0.0!j2objc-annotations.jar (57ms)
+downloading https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.10.0/checker-qual-3.10.0.jar ...
+	[SUCCESSFUL ] org.checkerframework#checker-qual;3.10.0!checker-qual.jar (60ms)
+downloading https://repo1.maven.org/maven2/org/apache/sedona/shade-proto/1.8.0/shade-proto-1.8.0-shaded.jar ...
+	[SUCCESSFUL ] org.apache.sedona#shade-proto;1.8.0!shade-proto.jar (119ms)
+downloading https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.41.2.2/sqlite-jdbc-3.41.2.2.jar ...
+	[SUCCESSFUL ] org.xerial#sqlite-jdbc;3.41.2.2!sqlite-jdbc.jar (542ms)
+downloading https://repo1.maven.org/maven2/io/graphframes/graphframes-spark3_2.12/0.9.2/graphframes-spark3_2.12-0.9.2.jar ...
+	[SUCCESSFUL ] io.graphframes#graphframes-spark3_2.12;0.9.2!graphframes-spark3_2.12.jar (53ms)
+downloading https://repo1.maven.org/maven2/org/beryx/awt-color-factory/1.0.0/awt-color-factory-1.0.0.jar ...
+	[SUCCESSFUL ] org.beryx#awt-color-factory;1.0.0!awt-color-factory.jar (50ms)
+downloading https://repo1.maven.org/maven2/com/wherobots/jpostal/1.2.2/jpostal-1.2.2.jar ...
+	[SUCCESSFUL ] com.wherobots#jpostal;1.2.2!jpostal.jar (537ms)
+:: resolution report :: resolve 11890ms :: artifacts dl 5193ms
+	:: modules in use:
+	com.github.ben-manes.caffeine#caffeine;2.9.2 from central in [default]
+	com.google.errorprone#error_prone_annotations;2.19.1 from central in [default]
+	com.google.guava#failureaccess;1.0.3 from central in [default]
+	com.google.guava#guava;33.4.7-jre from central in [default]
+	com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava from central in [default]
+	com.google.j2objc#j2objc-annotations;3.0.0 from central in [default]
+	com.google.jsinterop#jsinterop-annotations;2.0.0 from central in [default]
+	com.uber#h3;4.1.1 from central in [default]
+	com.wherobots#jpostal;1.2.2 from central in [default]
+	io.graphframes#graphframes-spark3_2.12;0.9.2 from central in [default]
+	it.unimi.dsi#fastutil;8.5.15 from central in [default]
+	net.sf.geographiclib#GeographicLib-Java;1.52 from central in [default]
+	org.apache.commons#commons-math3;3.6.1 from central in [default]
+	org.apache.sedona#sedona-common;1.8.0 from central in [default]
+	org.apache.sedona#sedona-spark-3.5_2.12;1.8.0 from central in [default]
+	org.apache.sedona#sedona-spark-common-3.5_2.12;1.8.0 from central in [default]
+	org.apache.sedona#shade-proto;1.8.0 from central in [default]
+	org.beryx#awt-color-factory;1.0.0 from central in [default]
+	org.checkerframework#checker-qual;3.10.0 from central in [default]
+	org.datasyslab#geotools-wrapper;1.8.0-33.1 from central in [default]
+	org.datasyslab#s2-geometry-library;20250620-rc1 from central in [default]
+	org.jspecify#jspecify;1.0.0 from central in [default]
+	org.locationtech.jts#jts-core;1.20.0 from central in [default]
+	org.locationtech.spatial4j#spatial4j;0.8 from central in [default]
+	org.scala-lang.modules#scala-collection-compat_2.12;2.5.0 from central in [default]
+	org.wololo#jts2geojson;0.16.1 from central in [default]
+	org.xerial#sqlite-jdbc;3.41.2.2 from central in [default]
+	:: evicted modules:
+	com.google.errorprone#error_prone_annotations;2.36.0 by [com.google.errorprone#error_prone_annotations;2.19.1] in [default]
+	com.google.errorprone#error_prone_annotations;2.5.1 by [com.google.errorprone#error_prone_annotations;2.19.1] in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   29  |   27  |   27  |   2   ||   27  |   27  |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-156c43f1-c4eb-4fc1-ad6a-fb20bfaa7cf2
+	confs: [default]
+	27 artifacts copied, 0 already retrieved (97538kB/106ms)
+25/12/12 03:18:33 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+/app/src/q4.py:5: DeprecationWarning: Importing from 'sedona.register' is deprecated. Please use 'sedona.spark.register.geo_registrator' instead.
+  from sedona.register import SedonaRegistrator
+25/12/12 03:18:34 INFO SparkContext: Running Spark version 3.5.0
+25/12/12 03:18:34 INFO SparkContext: OS info Linux, 6.12.54-linuxkit, aarch64
+25/12/12 03:18:34 INFO SparkContext: Java version 11.0.20.1
+25/12/12 03:18:34 INFO ResourceUtils: ==============================================================
+25/12/12 03:18:34 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/12/12 03:18:34 INFO ResourceUtils: ==============================================================
+25/12/12 03:18:34 INFO SparkContext: Submitted application: advdb-q4-sedona
+25/12/12 03:18:34 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/12/12 03:18:34 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+25/12/12 03:18:34 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/12/12 03:18:34 INFO SecurityManager: Changing view acls to: root
+25/12/12 03:18:34 INFO SecurityManager: Changing modify acls to: root
+25/12/12 03:18:34 INFO SecurityManager: Changing view acls groups to: 
+25/12/12 03:18:34 INFO SecurityManager: Changing modify acls groups to: 
+25/12/12 03:18:34 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+25/12/12 03:18:34 INFO Utils: Successfully started service 'sparkDriver' on port 43919.
+25/12/12 03:18:34 INFO SparkEnv: Registering MapOutputTracker
+25/12/12 03:18:34 INFO SparkEnv: Registering BlockManagerMaster
+25/12/12 03:18:34 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/12/12 03:18:34 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/12/12 03:18:34 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/12/12 03:18:34 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-32dd42b8-38cc-4486-9302-d5778c164480
+25/12/12 03:18:34 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/12/12 03:18:34 INFO SparkEnv: Registering OutputCommitCoordinator
+25/12/12 03:18:34 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/12/12 03:18:34 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.sedona_sedona-spark-3.5_2.12-1.8.0.jar at spark://spark-master:43919/jars/org.apache.sedona_sedona-spark-3.5_2.12-1.8.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.datasyslab_geotools-wrapper-1.8.0-33.1.jar at spark://spark-master:43919/jars/org.datasyslab_geotools-wrapper-1.8.0-33.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.sedona_sedona-common-1.8.0.jar at spark://spark-master:43919/jars/org.apache.sedona_sedona-common-1.8.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.sedona_sedona-spark-common-3.5_2.12-1.8.0.jar at spark://spark-master:43919/jars/org.apache.sedona_sedona-spark-common-3.5_2.12-1.8.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.locationtech.jts_jts-core-1.20.0.jar at spark://spark-master:43919/jars/org.locationtech.jts_jts-core-1.20.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.wololo_jts2geojson-0.16.1.jar at spark://spark-master:43919/jars/org.wololo_jts2geojson-0.16.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.scala-lang.modules_scala-collection-compat_2.12-2.5.0.jar at spark://spark-master:43919/jars/org.scala-lang.modules_scala-collection-compat_2.12-2.5.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.commons_commons-math3-3.6.1.jar at spark://spark-master:43919/jars/org.apache.commons_commons-math3-3.6.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.locationtech.spatial4j_spatial4j-0.8.jar at spark://spark-master:43919/jars/org.locationtech.spatial4j_spatial4j-0.8.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.datasyslab_s2-geometry-library-20250620-rc1.jar at spark://spark-master:43919/jars/org.datasyslab_s2-geometry-library-20250620-rc1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.uber_h3-4.1.1.jar at spark://spark-master:43919/jars/com.uber_h3-4.1.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/net.sf.geographiclib_GeographicLib-Java-1.52.jar at spark://spark-master:43919/jars/net.sf.geographiclib_GeographicLib-Java-1.52.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.github.ben-manes.caffeine_caffeine-2.9.2.jar at spark://spark-master:43919/jars/com.github.ben-manes.caffeine_caffeine-2.9.2.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.google.errorprone_error_prone_annotations-2.19.1.jar at spark://spark-master:43919/jars/com.google.errorprone_error_prone_annotations-2.19.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.google.guava_guava-33.4.7-jre.jar at spark://spark-master:43919/jars/com.google.guava_guava-33.4.7-jre.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.google.jsinterop_jsinterop-annotations-2.0.0.jar at spark://spark-master:43919/jars/com.google.jsinterop_jsinterop-annotations-2.0.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/it.unimi.dsi_fastutil-8.5.15.jar at spark://spark-master:43919/jars/it.unimi.dsi_fastutil-8.5.15.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.google.guava_failureaccess-1.0.3.jar at spark://spark-master:43919/jars/com.google.guava_failureaccess-1.0.3.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar at spark://spark-master:43919/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.jspecify_jspecify-1.0.0.jar at spark://spark-master:43919/jars/org.jspecify_jspecify-1.0.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.google.j2objc_j2objc-annotations-3.0.0.jar at spark://spark-master:43919/jars/com.google.j2objc_j2objc-annotations-3.0.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.checkerframework_checker-qual-3.10.0.jar at spark://spark-master:43919/jars/org.checkerframework_checker-qual-3.10.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.apache.sedona_shade-proto-1.8.0-shaded.jar at spark://spark-master:43919/jars/org.apache.sedona_shade-proto-1.8.0-shaded.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.xerial_sqlite-jdbc-3.41.2.2.jar at spark://spark-master:43919/jars/org.xerial_sqlite-jdbc-3.41.2.2.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/io.graphframes_graphframes-spark3_2.12-0.9.2.jar at spark://spark-master:43919/jars/io.graphframes_graphframes-spark3_2.12-0.9.2.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/org.beryx_awt-color-factory-1.0.0.jar at spark://spark-master:43919/jars/org.beryx_awt-color-factory-1.0.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added JAR file:///root/.ivy2/jars/com.wherobots_jpostal-1.2.2.jar at spark://spark-master:43919/jars/com.wherobots_jpostal-1.2.2.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.sedona_sedona-spark-3.5_2.12-1.8.0.jar at spark://spark-master:43919/files/org.apache.sedona_sedona-spark-3.5_2.12-1.8.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.apache.sedona_sedona-spark-3.5_2.12-1.8.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.apache.sedona_sedona-spark-3.5_2.12-1.8.0.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.datasyslab_geotools-wrapper-1.8.0-33.1.jar at spark://spark-master:43919/files/org.datasyslab_geotools-wrapper-1.8.0-33.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.datasyslab_geotools-wrapper-1.8.0-33.1.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.datasyslab_geotools-wrapper-1.8.0-33.1.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.sedona_sedona-common-1.8.0.jar at spark://spark-master:43919/files/org.apache.sedona_sedona-common-1.8.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.apache.sedona_sedona-common-1.8.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.apache.sedona_sedona-common-1.8.0.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.sedona_sedona-spark-common-3.5_2.12-1.8.0.jar at spark://spark-master:43919/files/org.apache.sedona_sedona-spark-common-3.5_2.12-1.8.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.apache.sedona_sedona-spark-common-3.5_2.12-1.8.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.apache.sedona_sedona-spark-common-3.5_2.12-1.8.0.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.locationtech.jts_jts-core-1.20.0.jar at spark://spark-master:43919/files/org.locationtech.jts_jts-core-1.20.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.locationtech.jts_jts-core-1.20.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.locationtech.jts_jts-core-1.20.0.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.wololo_jts2geojson-0.16.1.jar at spark://spark-master:43919/files/org.wololo_jts2geojson-0.16.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.wololo_jts2geojson-0.16.1.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.wololo_jts2geojson-0.16.1.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.scala-lang.modules_scala-collection-compat_2.12-2.5.0.jar at spark://spark-master:43919/files/org.scala-lang.modules_scala-collection-compat_2.12-2.5.0.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.scala-lang.modules_scala-collection-compat_2.12-2.5.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.scala-lang.modules_scala-collection-compat_2.12-2.5.0.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.commons_commons-math3-3.6.1.jar at spark://spark-master:43919/files/org.apache.commons_commons-math3-3.6.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.apache.commons_commons-math3-3.6.1.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.apache.commons_commons-math3-3.6.1.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.locationtech.spatial4j_spatial4j-0.8.jar at spark://spark-master:43919/files/org.locationtech.spatial4j_spatial4j-0.8.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.locationtech.spatial4j_spatial4j-0.8.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.locationtech.spatial4j_spatial4j-0.8.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/org.datasyslab_s2-geometry-library-20250620-rc1.jar at spark://spark-master:43919/files/org.datasyslab_s2-geometry-library-20250620-rc1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/org.datasyslab_s2-geometry-library-20250620-rc1.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.datasyslab_s2-geometry-library-20250620-rc1.jar
+25/12/12 03:18:34 INFO SparkContext: Added file file:///root/.ivy2/jars/com.uber_h3-4.1.1.jar at spark://spark-master:43919/files/com.uber_h3-4.1.1.jar with timestamp 1765509514495
+25/12/12 03:18:34 INFO Utils: Copying /root/.ivy2/jars/com.uber_h3-4.1.1.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.uber_h3-4.1.1.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/net.sf.geographiclib_GeographicLib-Java-1.52.jar at spark://spark-master:43919/files/net.sf.geographiclib_GeographicLib-Java-1.52.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/net.sf.geographiclib_GeographicLib-Java-1.52.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/net.sf.geographiclib_GeographicLib-Java-1.52.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/com.github.ben-manes.caffeine_caffeine-2.9.2.jar at spark://spark-master:43919/files/com.github.ben-manes.caffeine_caffeine-2.9.2.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/com.github.ben-manes.caffeine_caffeine-2.9.2.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.github.ben-manes.caffeine_caffeine-2.9.2.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/com.google.errorprone_error_prone_annotations-2.19.1.jar at spark://spark-master:43919/files/com.google.errorprone_error_prone_annotations-2.19.1.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/com.google.errorprone_error_prone_annotations-2.19.1.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.google.errorprone_error_prone_annotations-2.19.1.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/com.google.guava_guava-33.4.7-jre.jar at spark://spark-master:43919/files/com.google.guava_guava-33.4.7-jre.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/com.google.guava_guava-33.4.7-jre.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.google.guava_guava-33.4.7-jre.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/com.google.jsinterop_jsinterop-annotations-2.0.0.jar at spark://spark-master:43919/files/com.google.jsinterop_jsinterop-annotations-2.0.0.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/com.google.jsinterop_jsinterop-annotations-2.0.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.google.jsinterop_jsinterop-annotations-2.0.0.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/it.unimi.dsi_fastutil-8.5.15.jar at spark://spark-master:43919/files/it.unimi.dsi_fastutil-8.5.15.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/it.unimi.dsi_fastutil-8.5.15.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/it.unimi.dsi_fastutil-8.5.15.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/com.google.guava_failureaccess-1.0.3.jar at spark://spark-master:43919/files/com.google.guava_failureaccess-1.0.3.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/com.google.guava_failureaccess-1.0.3.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.google.guava_failureaccess-1.0.3.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar at spark://spark-master:43919/files/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.google.guava_listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/org.jspecify_jspecify-1.0.0.jar at spark://spark-master:43919/files/org.jspecify_jspecify-1.0.0.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/org.jspecify_jspecify-1.0.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.jspecify_jspecify-1.0.0.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/com.google.j2objc_j2objc-annotations-3.0.0.jar at spark://spark-master:43919/files/com.google.j2objc_j2objc-annotations-3.0.0.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/com.google.j2objc_j2objc-annotations-3.0.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.google.j2objc_j2objc-annotations-3.0.0.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/org.checkerframework_checker-qual-3.10.0.jar at spark://spark-master:43919/files/org.checkerframework_checker-qual-3.10.0.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/org.checkerframework_checker-qual-3.10.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.checkerframework_checker-qual-3.10.0.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/org.apache.sedona_shade-proto-1.8.0-shaded.jar at spark://spark-master:43919/files/org.apache.sedona_shade-proto-1.8.0-shaded.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/org.apache.sedona_shade-proto-1.8.0-shaded.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.apache.sedona_shade-proto-1.8.0-shaded.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/org.xerial_sqlite-jdbc-3.41.2.2.jar at spark://spark-master:43919/files/org.xerial_sqlite-jdbc-3.41.2.2.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/org.xerial_sqlite-jdbc-3.41.2.2.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.xerial_sqlite-jdbc-3.41.2.2.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/io.graphframes_graphframes-spark3_2.12-0.9.2.jar at spark://spark-master:43919/files/io.graphframes_graphframes-spark3_2.12-0.9.2.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/io.graphframes_graphframes-spark3_2.12-0.9.2.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/io.graphframes_graphframes-spark3_2.12-0.9.2.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/org.beryx_awt-color-factory-1.0.0.jar at spark://spark-master:43919/files/org.beryx_awt-color-factory-1.0.0.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/org.beryx_awt-color-factory-1.0.0.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/org.beryx_awt-color-factory-1.0.0.jar
+25/12/12 03:18:35 INFO SparkContext: Added file file:///root/.ivy2/jars/com.wherobots_jpostal-1.2.2.jar at spark://spark-master:43919/files/com.wherobots_jpostal-1.2.2.jar with timestamp 1765509514495
+25/12/12 03:18:35 INFO Utils: Copying /root/.ivy2/jars/com.wherobots_jpostal-1.2.2.jar to /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/userFiles-c576deb0-1c9f-4c96-bb6e-bd6f93717628/com.wherobots_jpostal-1.2.2.jar
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+25/12/12 03:18:35 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.4:7077 after 14 ms (0 ms spent in bootstraps)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20251212031835-0010
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251212031835-0010/0 on worker-20251212031329-172.18.0.5-40109 (172.18.0.5:40109) with 1 core(s)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251212031835-0010/0 on hostPort 172.18.0.5:40109 with 1 core(s), 2.0 GiB RAM
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251212031835-0010/1 on worker-20251212031329-172.18.0.5-40109 (172.18.0.5:40109) with 1 core(s)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251212031835-0010/1 on hostPort 172.18.0.5:40109 with 1 core(s), 2.0 GiB RAM
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251212031835-0010/2 on worker-20251212031329-172.18.0.5-40109 (172.18.0.5:40109) with 1 core(s)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251212031835-0010/2 on hostPort 172.18.0.5:40109 with 1 core(s), 2.0 GiB RAM
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251212031835-0010/3 on worker-20251212031329-172.18.0.5-40109 (172.18.0.5:40109) with 1 core(s)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251212031835-0010/3 on hostPort 172.18.0.5:40109 with 1 core(s), 2.0 GiB RAM
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251212031835-0010/4 on worker-20251212031329-172.18.0.5-40109 (172.18.0.5:40109) with 1 core(s)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251212031835-0010/4 on hostPort 172.18.0.5:40109 with 1 core(s), 2.0 GiB RAM
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251212031835-0010/5 on worker-20251212031329-172.18.0.5-40109 (172.18.0.5:40109) with 1 core(s)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251212031835-0010/5 on hostPort 172.18.0.5:40109 with 1 core(s), 2.0 GiB RAM
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251212031835-0010/6 on worker-20251212031329-172.18.0.5-40109 (172.18.0.5:40109) with 1 core(s)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251212031835-0010/6 on hostPort 172.18.0.5:40109 with 1 core(s), 2.0 GiB RAM
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20251212031835-0010/7 on worker-20251212031329-172.18.0.5-40109 (172.18.0.5:40109) with 1 core(s)
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: Granted executor ID app-20251212031835-0010/7 on hostPort 172.18.0.5:40109 with 1 core(s), 2.0 GiB RAM
+25/12/12 03:18:35 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36907.
+25/12/12 03:18:35 INFO NettyBlockTransferService: Server created on spark-master:36907
+25/12/12 03:18:35 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/12/12 03:18:35 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 36907, None)
+25/12/12 03:18:35 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:36907 with 434.4 MiB RAM, BlockManagerId(driver, spark-master, 36907, None)
+25/12/12 03:18:35 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 36907, None)
+25/12/12 03:18:35 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 36907, None)
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251212031835-0010/1 is now RUNNING
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251212031835-0010/3 is now RUNNING
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251212031835-0010/2 is now RUNNING
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251212031835-0010/4 is now RUNNING
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251212031835-0010/0 is now RUNNING
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251212031835-0010/6 is now RUNNING
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251212031835-0010/7 is now RUNNING
+25/12/12 03:18:35 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20251212031835-0010/5 is now RUNNING
+25/12/12 03:18:35 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+=== Storage Mode: HDFS ===
+=== Data Path: hdfs://namenode:9000/data ===
+/app/src/q4.py:159: DeprecationWarning: Call to deprecated function registerAll (Deprecated since 1.4.1, use SedonaContext.create() instead.).
+  SedonaRegistrator.registerAll(spark)
+25/12/12 03:18:35 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+25/12/12 03:18:35 INFO SharedState: Warehouse path is 'file:/app/spark-warehouse'.
+25/12/12 03:18:38 INFO CodeGenerator: Code generated in 173.77775 ms
+25/12/12 03:18:38 INFO DAGScheduler: Registering RDD 2 (count at <unknown>:0) as input to shuffle 0
+25/12/12 03:18:38 INFO DAGScheduler: Got map stage job 0 (count at <unknown>:0) with 1 output partitions
+25/12/12 03:18:38 INFO DAGScheduler: Final stage: ShuffleMapStage 0 (count at <unknown>:0)
+25/12/12 03:18:38 INFO DAGScheduler: Parents of final stage: List()
+25/12/12 03:18:38 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:18:38 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[2] at count at <unknown>:0), which has no missing parents
+25/12/12 03:18:38 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 11.0 KiB, free 434.4 MiB)
+25/12/12 03:18:38 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 5.7 KiB, free 434.4 MiB)
+25/12/12 03:18:38 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on spark-master:36907 (size: 5.7 KiB, free: 434.4 MiB)
+25/12/12 03:18:38 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:18:38 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[2] at count at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+25/12/12 03:18:38 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+25/12/12 03:18:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:33124) with ID 7,  ResourceProfileId 0
+25/12/12 03:18:39 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:46139 with 1048.8 MiB RAM, BlockManagerId(7, 172.18.0.5, 46139, None)
+25/12/12 03:18:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:33188) with ID 0,  ResourceProfileId 0
+25/12/12 03:18:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:33200) with ID 2,  ResourceProfileId 0
+25/12/12 03:18:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:33202) with ID 5,  ResourceProfileId 0
+25/12/12 03:18:39 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:37593 with 1048.8 MiB RAM, BlockManagerId(0, 172.18.0.5, 37593, None)
+25/12/12 03:18:39 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:42241 with 1048.8 MiB RAM, BlockManagerId(2, 172.18.0.5, 42241, None)
+25/12/12 03:18:39 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:39749 with 1048.8 MiB RAM, BlockManagerId(5, 172.18.0.5, 39749, None)
+25/12/12 03:18:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:33226) with ID 4,  ResourceProfileId 0
+25/12/12 03:18:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:33214) with ID 3,  ResourceProfileId 0
+25/12/12 03:18:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:33238) with ID 6,  ResourceProfileId 0
+25/12/12 03:18:39 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:35983 with 1048.8 MiB RAM, BlockManagerId(4, 172.18.0.5, 35983, None)
+25/12/12 03:18:39 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.18.0.5:33244) with ID 1,  ResourceProfileId 0
+25/12/12 03:18:39 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:36361 with 1048.8 MiB RAM, BlockManagerId(3, 172.18.0.5, 36361, None)
+25/12/12 03:18:40 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:41107 with 1048.8 MiB RAM, BlockManagerId(6, 172.18.0.5, 41107, None)
+25/12/12 03:18:40 INFO BlockManagerMasterEndpoint: Registering block manager 172.18.0.5:44427 with 1048.8 MiB RAM, BlockManagerId(1, 172.18.0.5, 44427, None)
+25/12/12 03:18:42 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.18.0.5, executor 7, partition 0, PROCESS_LOCAL, 12994 bytes) 
+25/12/12 03:18:42 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.18.0.5:46139 (size: 5.7 KiB, free: 1048.8 MiB)
+25/12/12 03:18:43 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1024 ms on 172.18.0.5 (executor 7) (1/1)
+25/12/12 03:18:43 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+25/12/12 03:18:43 INFO DAGScheduler: ShuffleMapStage 0 (count at <unknown>:0) finished in 4.920 s
+25/12/12 03:18:43 INFO DAGScheduler: looking for newly runnable stages
+25/12/12 03:18:43 INFO DAGScheduler: running: Set()
+25/12/12 03:18:43 INFO DAGScheduler: waiting: Set()
+25/12/12 03:18:43 INFO DAGScheduler: failed: Set()
+25/12/12 03:18:43 INFO CodeGenerator: Code generated in 15.185166 ms
+25/12/12 03:18:43 INFO SparkContext: Starting job: count at <unknown>:0
+25/12/12 03:18:43 INFO DAGScheduler: Got job 1 (count at <unknown>:0) with 1 output partitions
+25/12/12 03:18:43 INFO DAGScheduler: Final stage: ResultStage 2 (count at <unknown>:0)
+25/12/12 03:18:43 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+25/12/12 03:18:43 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:18:43 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[5] at count at <unknown>:0), which has no missing parents
+25/12/12 03:18:43 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 12.5 KiB, free 434.4 MiB)
+25/12/12 03:18:43 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 434.4 MiB)
+25/12/12 03:18:43 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on spark-master:36907 (size: 5.9 KiB, free: 434.4 MiB)
+25/12/12 03:18:43 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:18:43 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[5] at count at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+25/12/12 03:18:43 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+25/12/12 03:18:43 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 1) (172.18.0.5, executor 2, partition 0, NODE_LOCAL, 12797 bytes) 
+25/12/12 03:18:43 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.18.0.5:42241 (size: 5.9 KiB, free: 1048.8 MiB)
+25/12/12 03:18:43 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 172.18.0.5:33200
+25/12/12 03:18:44 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 1) in 563 ms on 172.18.0.5 (executor 2) (1/1)
+25/12/12 03:18:44 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+25/12/12 03:18:44 INFO DAGScheduler: ResultStage 2 (count at <unknown>:0) finished in 0.576 s
+25/12/12 03:18:44 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+25/12/12 03:18:44 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+25/12/12 03:18:44 INFO DAGScheduler: Job 1 finished: count at <unknown>:0, took 0.588477 s
+25/12/12 03:18:44 INFO BlockManagerInfo: Removed broadcast_1_piece0 on spark-master:36907 in memory (size: 5.9 KiB, free: 434.4 MiB)
+25/12/12 03:18:44 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.18.0.5:42241 in memory (size: 5.9 KiB, free: 1048.8 MiB)
+25/12/12 03:18:44 INFO BlockManagerInfo: Removed broadcast_0_piece0 on spark-master:36907 in memory (size: 5.7 KiB, free: 434.4 MiB)
+25/12/12 03:18:44 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.18.0.5:46139 in memory (size: 5.7 KiB, free: 1048.8 MiB)
+25/12/12 03:18:46 INFO InMemoryFileIndex: It took 39 ms to list leaf files for 2 paths.
+25/12/12 03:18:46 INFO InMemoryFileIndex: It took 6 ms to list leaf files for 2 paths.
+25/12/12 03:18:46 INFO FileSourceStrategy: Pushed Filters: 
+25/12/12 03:18:46 INFO FileSourceStrategy: Post-Scan Filters: (length(trim(value#19, None)) > 0)
+25/12/12 03:18:46 INFO CodeGenerator: Code generated in 8.938917 ms
+25/12/12 03:18:46 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 313.9 KiB, free 434.1 MiB)
+25/12/12 03:18:46 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 57.4 KiB, free 434.0 MiB)
+25/12/12 03:18:46 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on spark-master:36907 (size: 57.4 KiB, free: 434.3 MiB)
+25/12/12 03:18:46 INFO SparkContext: Created broadcast 2 from csv at <unknown>:0
+25/12/12 03:18:46 INFO FileSourceScanExec: Planning scan with bin packing, max size: 118509402 bytes, open cost is considered as scanning 4194304 bytes.
+25/12/12 03:18:46 INFO SparkContext: Starting job: csv at <unknown>:0
+25/12/12 03:18:46 INFO DAGScheduler: Got job 2 (csv at <unknown>:0) with 1 output partitions
+25/12/12 03:18:46 INFO DAGScheduler: Final stage: ResultStage 3 (csv at <unknown>:0)
+25/12/12 03:18:46 INFO DAGScheduler: Parents of final stage: List()
+25/12/12 03:18:46 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:18:46 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[9] at csv at <unknown>:0), which has no missing parents
+25/12/12 03:18:46 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 13.5 KiB, free 434.0 MiB)
+25/12/12 03:18:46 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 434.0 MiB)
+25/12/12 03:18:46 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on spark-master:36907 (size: 6.4 KiB, free: 434.3 MiB)
+25/12/12 03:18:46 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:18:46 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[9] at csv at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+25/12/12 03:18:46 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+25/12/12 03:18:46 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 2) (172.18.0.5, executor 7, partition 0, ANY, 13427 bytes) 
+25/12/12 03:18:46 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.18.0.5:46139 (size: 6.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:46 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.18.0.5:46139 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:46 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 2) in 614 ms on 172.18.0.5 (executor 7) (1/1)
+25/12/12 03:18:46 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+25/12/12 03:18:46 INFO DAGScheduler: ResultStage 3 (csv at <unknown>:0) finished in 0.626 s
+25/12/12 03:18:46 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+25/12/12 03:18:46 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+25/12/12 03:18:46 INFO DAGScheduler: Job 2 finished: csv at <unknown>:0, took 0.629994 s
+25/12/12 03:18:46 INFO CodeGenerator: Code generated in 5.853958 ms
+25/12/12 03:18:46 INFO FileSourceStrategy: Pushed Filters: 
+25/12/12 03:18:46 INFO FileSourceStrategy: Post-Scan Filters: 
+25/12/12 03:18:46 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 313.9 KiB, free 433.7 MiB)
+25/12/12 03:18:46 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 57.4 KiB, free 433.7 MiB)
+25/12/12 03:18:46 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on spark-master:36907 (size: 57.4 KiB, free: 434.3 MiB)
+25/12/12 03:18:46 INFO SparkContext: Created broadcast 4 from csv at <unknown>:0
+25/12/12 03:18:46 INFO FileSourceScanExec: Planning scan with bin packing, max size: 118509402 bytes, open cost is considered as scanning 4194304 bytes.
+25/12/12 03:18:47 INFO SparkContext: Starting job: csv at <unknown>:0
+25/12/12 03:18:47 INFO DAGScheduler: Got job 3 (csv at <unknown>:0) with 8 output partitions
+25/12/12 03:18:47 INFO DAGScheduler: Final stage: ResultStage 4 (csv at <unknown>:0)
+25/12/12 03:18:47 INFO DAGScheduler: Parents of final stage: List()
+25/12/12 03:18:47 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:18:47 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[15] at csv at <unknown>:0), which has no missing parents
+25/12/12 03:18:47 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 39.3 KiB, free 433.6 MiB)
+25/12/12 03:18:47 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 15.6 KiB, free 433.6 MiB)
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on spark-master:36907 (size: 15.6 KiB, free: 434.3 MiB)
+25/12/12 03:18:47 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:18:47 INFO DAGScheduler: Submitting 8 missing tasks from ResultStage 4 (MapPartitionsRDD[15] at csv at <unknown>:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+25/12/12 03:18:47 INFO TaskSchedulerImpl: Adding task set 4.0 with 8 tasks resource profile 0
+25/12/12 03:18:47 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 3) (172.18.0.5, executor 1, partition 0, ANY, 13427 bytes) 
+25/12/12 03:18:47 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 4) (172.18.0.5, executor 0, partition 1, ANY, 13427 bytes) 
+25/12/12 03:18:47 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 5) (172.18.0.5, executor 2, partition 2, ANY, 13427 bytes) 
+25/12/12 03:18:47 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 6) (172.18.0.5, executor 5, partition 3, ANY, 13427 bytes) 
+25/12/12 03:18:47 INFO TaskSetManager: Starting task 4.0 in stage 4.0 (TID 7) (172.18.0.5, executor 6, partition 4, ANY, 13427 bytes) 
+25/12/12 03:18:47 INFO TaskSetManager: Starting task 5.0 in stage 4.0 (TID 8) (172.18.0.5, executor 3, partition 5, ANY, 13427 bytes) 
+25/12/12 03:18:47 INFO TaskSetManager: Starting task 6.0 in stage 4.0 (TID 9) (172.18.0.5, executor 7, partition 6, ANY, 13427 bytes) 
+25/12/12 03:18:47 INFO TaskSetManager: Starting task 7.0 in stage 4.0 (TID 10) (172.18.0.5, executor 4, partition 7, ANY, 13551 bytes) 
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.18.0.5:46139 (size: 15.6 KiB, free: 1048.7 MiB)
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.18.0.5:42241 (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.18.0.5:36361 (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.18.0.5:35983 (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.18.0.5:44427 (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.18.0.5:41107 (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.18.0.5:37593 (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:47 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.18.0.5:39749 (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:48 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.5:46139 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:49 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.5:42241 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:51 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.5:36361 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:51 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.5:39749 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:51 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.5:35983 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:51 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.5:41107 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:51 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.5:37593 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:52 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.18.0.5:44427 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:52 INFO TaskSetManager: Finished task 6.0 in stage 4.0 (TID 9) in 5425 ms on 172.18.0.5 (executor 7) (1/8)
+25/12/12 03:18:56 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 5) in 8985 ms on 172.18.0.5 (executor 2) (2/8)
+25/12/12 03:18:56 INFO TaskSetManager: Finished task 5.0 in stage 4.0 (TID 8) in 9943 ms on 172.18.0.5 (executor 3) (3/8)
+25/12/12 03:18:57 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 3) in 10576 ms on 172.18.0.5 (executor 1) (4/8)
+25/12/12 03:18:57 INFO TaskSetManager: Finished task 7.0 in stage 4.0 (TID 10) in 10584 ms on 172.18.0.5 (executor 4) (5/8)
+25/12/12 03:18:57 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 6) in 10700 ms on 172.18.0.5 (executor 5) (6/8)
+25/12/12 03:18:57 INFO TaskSetManager: Finished task 4.0 in stage 4.0 (TID 7) in 10903 ms on 172.18.0.5 (executor 6) (7/8)
+25/12/12 03:18:58 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 4) in 11414 ms on 172.18.0.5 (executor 0) (8/8)
+25/12/12 03:18:58 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+25/12/12 03:18:58 INFO DAGScheduler: ResultStage 4 (csv at <unknown>:0) finished in 11.433 s
+25/12/12 03:18:58 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+25/12/12 03:18:58 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage finished
+25/12/12 03:18:58 INFO DAGScheduler: Job 3 finished: csv at <unknown>:0, took 11.440785 s
+25/12/12 03:18:58 INFO InMemoryFileIndex: It took 12 ms to list leaf files for 1 paths.
+25/12/12 03:18:58 INFO InMemoryFileIndex: It took 3 ms to list leaf files for 1 paths.
+25/12/12 03:18:59 INFO FileSourceStrategy: Pushed Filters: 
+25/12/12 03:18:59 INFO FileSourceStrategy: Post-Scan Filters: (length(trim(value#214, None)) > 0)
+25/12/12 03:18:59 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 313.9 KiB, free 433.3 MiB)
+25/12/12 03:18:59 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 57.4 KiB, free 433.2 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on spark-master:36907 (size: 57.4 KiB, free: 434.2 MiB)
+25/12/12 03:18:59 INFO SparkContext: Created broadcast 6 from csv at <unknown>:0
+25/12/12 03:18:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+25/12/12 03:18:59 INFO SparkContext: Starting job: csv at <unknown>:0
+25/12/12 03:18:59 INFO DAGScheduler: Got job 4 (csv at <unknown>:0) with 1 output partitions
+25/12/12 03:18:59 INFO DAGScheduler: Final stage: ResultStage 5 (csv at <unknown>:0)
+25/12/12 03:18:59 INFO DAGScheduler: Parents of final stage: List()
+25/12/12 03:18:59 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:18:59 INFO DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[19] at csv at <unknown>:0), which has no missing parents
+25/12/12 03:18:59 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 13.5 KiB, free 433.2 MiB)
+25/12/12 03:18:59 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 433.2 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on spark-master:36907 (size: 6.4 KiB, free: 434.2 MiB)
+25/12/12 03:18:59 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:18:59 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[19] at csv at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+25/12/12 03:18:59 INFO TaskSchedulerImpl: Adding task set 5.0 with 1 tasks resource profile 0
+25/12/12 03:18:59 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 11) (172.18.0.5, executor 5, partition 0, ANY, 13408 bytes) 
+25/12/12 03:18:59 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 172.18.0.5:39749 (size: 6.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.18.0.5:39749 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:59 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 11) in 152 ms on 172.18.0.5 (executor 5) (1/1)
+25/12/12 03:18:59 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+25/12/12 03:18:59 INFO DAGScheduler: ResultStage 5 (csv at <unknown>:0) finished in 0.166 s
+25/12/12 03:18:59 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+25/12/12 03:18:59 INFO TaskSchedulerImpl: Killing all running tasks in stage 5: Stage finished
+25/12/12 03:18:59 INFO DAGScheduler: Job 4 finished: csv at <unknown>:0, took 0.172850 s
+25/12/12 03:18:59 INFO FileSourceStrategy: Pushed Filters: 
+25/12/12 03:18:59 INFO FileSourceStrategy: Post-Scan Filters: 
+25/12/12 03:18:59 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 313.9 KiB, free 432.9 MiB)
+25/12/12 03:18:59 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 57.4 KiB, free 432.9 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on spark-master:36907 (size: 57.4 KiB, free: 434.1 MiB)
+25/12/12 03:18:59 INFO SparkContext: Created broadcast 8 from csv at <unknown>:0
+25/12/12 03:18:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+25/12/12 03:18:59 INFO SparkContext: Starting job: csv at <unknown>:0
+25/12/12 03:18:59 INFO DAGScheduler: Got job 5 (csv at <unknown>:0) with 1 output partitions
+25/12/12 03:18:59 INFO DAGScheduler: Final stage: ResultStage 6 (csv at <unknown>:0)
+25/12/12 03:18:59 INFO DAGScheduler: Parents of final stage: List()
+25/12/12 03:18:59 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:18:59 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[25] at csv at <unknown>:0), which has no missing parents
+25/12/12 03:18:59 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 38.9 KiB, free 432.8 MiB)
+25/12/12 03:18:59 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 15.4 KiB, free 432.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on spark-master:36907 (size: 15.4 KiB, free: 434.1 MiB)
+25/12/12 03:18:59 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:18:59 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[25] at csv at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+25/12/12 03:18:59 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_2_piece0 on spark-master:36907 in memory (size: 57.4 KiB, free: 434.2 MiB)
+25/12/12 03:18:59 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 12) (172.18.0.5, executor 2, partition 0, ANY, 13408 bytes) 
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.18.0.5:46139 in memory (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on spark-master:36907 in memory (size: 57.4 KiB, free: 434.2 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.18.0.5:46139 in memory (size: 57.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.18.0.5:35983 in memory (size: 57.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.18.0.5:41107 in memory (size: 57.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.18.0.5:37593 in memory (size: 57.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.18.0.5:44427 in memory (size: 57.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.18.0.5:39749 in memory (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.18.0.5:42241 in memory (size: 57.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.18.0.5:36361 in memory (size: 57.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_7_piece0 on spark-master:36907 in memory (size: 6.4 KiB, free: 434.3 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_7_piece0 on 172.18.0.5:39749 in memory (size: 6.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_6_piece0 on spark-master:36907 in memory (size: 57.4 KiB, free: 434.3 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 172.18.0.5:42241 (size: 15.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_6_piece0 on 172.18.0.5:39749 in memory (size: 57.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_3_piece0 on spark-master:36907 in memory (size: 6.4 KiB, free: 434.3 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 172.18.0.5:46139 in memory (size: 6.4 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on spark-master:36907 in memory (size: 15.6 KiB, free: 434.3 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.18.0.5:39749 in memory (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.18.0.5:35983 in memory (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.18.0.5:42241 in memory (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.18.0.5:44427 in memory (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.18.0.5:36361 in memory (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.18.0.5:37593 in memory (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.18.0.5:41107 in memory (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.18.0.5:46139 in memory (size: 15.6 KiB, free: 1048.8 MiB)
+25/12/12 03:18:59 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 172.18.0.5:42241 (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:18:59 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 12) in 268 ms on 172.18.0.5 (executor 2) (1/1)
+25/12/12 03:18:59 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+25/12/12 03:18:59 INFO DAGScheduler: ResultStage 6 (csv at <unknown>:0) finished in 0.315 s
+25/12/12 03:18:59 INFO DAGScheduler: Job 5 is finished. Cancelling potential speculative or zombie tasks for this job
+25/12/12 03:18:59 INFO TaskSchedulerImpl: Killing all running tasks in stage 6: Stage finished
+25/12/12 03:18:59 INFO DAGScheduler: Job 5 finished: csv at <unknown>:0, took 0.318994 s
+=== Q4: Physical plan (crime-station join with ST_DistanceSphere) ===
+25/12/12 03:18:59 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+25/12/12 03:18:59 INFO FileSourceStrategy: Pushed Filters: IsNotNull(LAT),IsNotNull(LON),Or(Not(EqualTo(LAT,0.0)),Not(EqualTo(LON,0.0)))
+25/12/12 03:18:59 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(LAT#62),isnotnull(LON#63),(NOT (LAT#62 = 0.0) OR NOT (LON#63 = 0.0))
+25/12/12 03:18:59 INFO FileSourceStrategy: Pushed Filters: 
+25/12/12 03:18:59 INFO FileSourceStrategy: Post-Scan Filters: 
+== Parsed Logical Plan ==
+'Project [crime_id#151L, crime_geom#181, DIVISION#234, station_geom#258, distance_m#272, ('distance_m / 1000.0) AS distance_km#278]
++- Project [crime_id#151L, crime_geom#181, DIVISION#234, station_geom#258,  **org.apache.spark.sql.sedona_sql.expressions.ST_DistanceSphere**   AS distance_m#272]
+   +- Join Cross
+      :- Project [crime_id#151L, crime_geom#181]
+      :  +- Project [DR_NO#36, Date Rptd#37, DATE OCC#38, TIME OCC#39, AREA#40, AREA NAME#41, Rpt Dist No#42, Part 1-2#43, Crm Cd#44, Crm Cd Desc#45, Mocodes#46, Vict Age#47, Vict Sex#48, Vict Descent#49, Premis Cd#50, Premis Desc#51, Weapon Used Cd#52, Weapon Desc#53, Status#54, Status Desc#55, Crm Cd 1#56, Crm Cd 2#57, Crm Cd 3#58, Crm Cd 4#59, ... 6 more fields]
+      :     +- Project [DR_NO#36, Date Rptd#37, DATE OCC#38, TIME OCC#39, AREA#40, AREA NAME#41, Rpt Dist No#42, Part 1-2#43, Crm Cd#44, Crm Cd Desc#45, Mocodes#46, Vict Age#47, Vict Sex#48, Vict Descent#49, Premis Cd#50, Premis Desc#51, Weapon Used Cd#52, Weapon Desc#53, Status#54, Status Desc#55, Crm Cd 1#56, Crm Cd 2#57, Crm Cd 3#58, Crm Cd 4#59, ... 5 more fields]
+      :        +- Filter (NOT (LAT#92 = 0.0) OR NOT (LON#122 = 0.0))
+      :           +- Filter (isnotnull(LAT#92) AND isnotnull(LON#122))
+      :              +- Project [DR_NO#36, Date Rptd#37, DATE OCC#38, TIME OCC#39, AREA#40, AREA NAME#41, Rpt Dist No#42, Part 1-2#43, Crm Cd#44, Crm Cd Desc#45, Mocodes#46, Vict Age#47, Vict Sex#48, Vict Descent#49, Premis Cd#50, Premis Desc#51, Weapon Used Cd#52, Weapon Desc#53, Status#54, Status Desc#55, Crm Cd 1#56, Crm Cd 2#57, Crm Cd 3#58, Crm Cd 4#59, ... 4 more fields]
+      :                 +- Project [DR_NO#36, Date Rptd#37, DATE OCC#38, TIME OCC#39, AREA#40, AREA NAME#41, Rpt Dist No#42, Part 1-2#43, Crm Cd#44, Crm Cd Desc#45, Mocodes#46, Vict Age#47, Vict Sex#48, Vict Descent#49, Premis Cd#50, Premis Desc#51, Weapon Used Cd#52, Weapon Desc#53, Status#54, Status Desc#55, Crm Cd 1#56, Crm Cd 2#57, Crm Cd 3#58, Crm Cd 4#59, ... 4 more fields]
+      :                    +- Relation [DR_NO#36,Date Rptd#37,DATE OCC#38,TIME OCC#39,AREA#40,AREA NAME#41,Rpt Dist No#42,Part 1-2#43,Crm Cd#44,Crm Cd Desc#45,Mocodes#46,Vict Age#47,Vict Sex#48,Vict Descent#49,Premis Cd#50,Premis Desc#51,Weapon Used Cd#52,Weapon Desc#53,Status#54,Status Desc#55,Crm Cd 1#56,Crm Cd 2#57,Crm Cd 3#58,Crm Cd 4#59,... 4 more fields] csv
+      +- ResolvedHint (strategy=broadcast)
+         +- Project [DIVISION#234, station_geom#258]
+            +- Project [X#243, Y#251, FID#233, DIVISION#234, LOCATION#235, PREC#236,  **org.apache.spark.sql.sedona_sql.expressions.ST_Point**   AS station_geom#258]
+               +- Project [X#243, cast(Y#232 as double) AS Y#251, FID#233, DIVISION#234, LOCATION#235, PREC#236]
+                  +- Project [cast(X#231 as double) AS X#243, Y#232, FID#233, DIVISION#234, LOCATION#235, PREC#236]
+                     +- Relation [X#231,Y#232,FID#233,DIVISION#234,LOCATION#235,PREC#236] csv
+
+== Analyzed Logical Plan ==
+crime_id: bigint, crime_geom: geometry, DIVISION: string, station_geom: geometry, distance_m: double, distance_km: double
+Project [crime_id#151L, crime_geom#181, DIVISION#234, station_geom#258, distance_m#272, (distance_m#272 / 1000.0) AS distance_km#278]
++- Project [crime_id#151L, crime_geom#181, DIVISION#234, station_geom#258,  **org.apache.spark.sql.sedona_sql.expressions.ST_DistanceSphere**   AS distance_m#272]
+   +- Join Cross
+      :- Project [crime_id#151L, crime_geom#181]
+      :  +- Project [DR_NO#36, Date Rptd#37, DATE OCC#38, TIME OCC#39, AREA#40, AREA NAME#41, Rpt Dist No#42, Part 1-2#43, Crm Cd#44, Crm Cd Desc#45, Mocodes#46, Vict Age#47, Vict Sex#48, Vict Descent#49, Premis Cd#50, Premis Desc#51, Weapon Used Cd#52, Weapon Desc#53, Status#54, Status Desc#55, Crm Cd 1#56, Crm Cd 2#57, Crm Cd 3#58, Crm Cd 4#59, ... 6 more fields]
+      :     +- Project [DR_NO#36, Date Rptd#37, DATE OCC#38, TIME OCC#39, AREA#40, AREA NAME#41, Rpt Dist No#42, Part 1-2#43, Crm Cd#44, Crm Cd Desc#45, Mocodes#46, Vict Age#47, Vict Sex#48, Vict Descent#49, Premis Cd#50, Premis Desc#51, Weapon Used Cd#52, Weapon Desc#53, Status#54, Status Desc#55, Crm Cd 1#56, Crm Cd 2#57, Crm Cd 3#58, Crm Cd 4#59, ... 5 more fields]
+      :        +- Filter (NOT (LAT#92 = 0.0) OR NOT (LON#122 = 0.0))
+      :           +- Filter (isnotnull(LAT#92) AND isnotnull(LON#122))
+      :              +- Project [DR_NO#36, Date Rptd#37, DATE OCC#38, TIME OCC#39, AREA#40, AREA NAME#41, Rpt Dist No#42, Part 1-2#43, Crm Cd#44, Crm Cd Desc#45, Mocodes#46, Vict Age#47, Vict Sex#48, Vict Descent#49, Premis Cd#50, Premis Desc#51, Weapon Used Cd#52, Weapon Desc#53, Status#54, Status Desc#55, Crm Cd 1#56, Crm Cd 2#57, Crm Cd 3#58, Crm Cd 4#59, ... 4 more fields]
+      :                 +- Project [DR_NO#36, Date Rptd#37, DATE OCC#38, TIME OCC#39, AREA#40, AREA NAME#41, Rpt Dist No#42, Part 1-2#43, Crm Cd#44, Crm Cd Desc#45, Mocodes#46, Vict Age#47, Vict Sex#48, Vict Descent#49, Premis Cd#50, Premis Desc#51, Weapon Used Cd#52, Weapon Desc#53, Status#54, Status Desc#55, Crm Cd 1#56, Crm Cd 2#57, Crm Cd 3#58, Crm Cd 4#59, ... 4 more fields]
+      :                    +- Relation [DR_NO#36,Date Rptd#37,DATE OCC#38,TIME OCC#39,AREA#40,AREA NAME#41,Rpt Dist No#42,Part 1-2#43,Crm Cd#44,Crm Cd Desc#45,Mocodes#46,Vict Age#47,Vict Sex#48,Vict Descent#49,Premis Cd#50,Premis Desc#51,Weapon Used Cd#52,Weapon Desc#53,Status#54,Status Desc#55,Crm Cd 1#56,Crm Cd 2#57,Crm Cd 3#58,Crm Cd 4#59,... 4 more fields] csv
+      +- ResolvedHint (strategy=broadcast)
+         +- Project [DIVISION#234, station_geom#258]
+            +- Project [X#243, Y#251, FID#233, DIVISION#234, LOCATION#235, PREC#236,  **org.apache.spark.sql.sedona_sql.expressions.ST_Point**   AS station_geom#258]
+               +- Project [X#243, cast(Y#232 as double) AS Y#251, FID#233, DIVISION#234, LOCATION#235, PREC#236]
+                  +- Project [cast(X#231 as double) AS X#243, Y#232, FID#233, DIVISION#234, LOCATION#235, PREC#236]
+                     +- Relation [X#231,Y#232,FID#233,DIVISION#234,LOCATION#235,PREC#236] csv
+
+== Optimized Logical Plan ==
+Project [crime_id#151L, crime_geom#181, DIVISION#234, station_geom#258, distance_m#272, (distance_m#272 / 1000.0) AS distance_km#278]
++- Project [crime_id#151L, crime_geom#181, DIVISION#234, station_geom#258,  **org.apache.spark.sql.sedona_sql.expressions.ST_DistanceSphere**   AS distance_m#272]
+   +- Join Cross, rightHint=(strategy=broadcast)
+      :- Project [crime_id#151L,  **org.apache.spark.sql.sedona_sql.expressions.ST_Point**   AS crime_geom#181]
+      :  +- Project [LAT#62, LON#63, monotonically_increasing_id() AS crime_id#151L]
+      :     +- Filter ((isnotnull(LAT#62) AND isnotnull(LON#63)) AND (NOT (LAT#62 = 0.0) OR NOT (LON#63 = 0.0)))
+      :        +- Relation [DR_NO#36,Date Rptd#37,DATE OCC#38,TIME OCC#39,AREA#40,AREA NAME#41,Rpt Dist No#42,Part 1-2#43,Crm Cd#44,Crm Cd Desc#45,Mocodes#46,Vict Age#47,Vict Sex#48,Vict Descent#49,Premis Cd#50,Premis Desc#51,Weapon Used Cd#52,Weapon Desc#53,Status#54,Status Desc#55,Crm Cd 1#56,Crm Cd 2#57,Crm Cd 3#58,Crm Cd 4#59,... 4 more fields] csv
+      +- Project [DIVISION#234,  **org.apache.spark.sql.sedona_sql.expressions.ST_Point**   AS station_geom#258]
+         +- Relation [X#231,Y#232,FID#233,DIVISION#234,LOCATION#235,PREC#236] csv
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Project [crime_id#151L, crime_geom#181, DIVISION#234, station_geom#258, distance_m#272, (distance_m#272 / 1000.0) AS distance_km#278]
+   +- Project [crime_id#151L, crime_geom#181, DIVISION#234, station_geom#258,  **org.apache.spark.sql.sedona_sql.expressions.ST_DistanceSphere**   AS distance_m#272]
+      +- BroadcastNestedLoopJoin BuildRight, Cross
+         :- Project [crime_id#151L,  **org.apache.spark.sql.sedona_sql.expressions.ST_Point**   AS crime_geom#181]
+         :  +- Project [LAT#62, LON#63, monotonically_increasing_id() AS crime_id#151L]
+         :     +- Filter ((isnotnull(LAT#62) AND isnotnull(LON#63)) AND (NOT (LAT#62 = 0.0) OR NOT (LON#63 = 0.0)))
+         :        +- FileScan csv [LAT#62,LON#63] Batched: false, DataFilters: [isnotnull(LAT#62), isnotnull(LON#63), (NOT (LAT#62 = 0.0) OR NOT (LON#63 = 0.0))], Format: CSV, Location: InMemoryFileIndex(2 paths)[hdfs://namenode:9000/data/LA_Crime_Data/LA_Crime_Data_2010_2019.csv, h..., PartitionFilters: [], PushedFilters: [IsNotNull(LAT), IsNotNull(LON), Or(Not(EqualTo(LAT,0.0)),Not(EqualTo(LON,0.0)))], ReadSchema: struct<LAT:double,LON:double>
+         +- BroadcastExchange IdentityBroadcastMode, [plan_id=94]
+            +- Project [DIVISION#234,  **org.apache.spark.sql.sedona_sql.expressions.ST_Point**   AS station_geom#258]
+               +- FileScan csv [X#231,Y#232,DIVISION#234] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[hdfs://namenode:9000/data/LA_Police_Stations.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<X:double,Y:double,DIVISION:string>
+
+=== Q4: Results (DIVISION, average_distance_km, count) ===
+25/12/12 03:19:00 INFO FileSourceStrategy: Pushed Filters: IsNotNull(LAT),IsNotNull(LON),Or(Not(EqualTo(LAT,0.0)),Not(EqualTo(LON,0.0)))
+25/12/12 03:19:00 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(LAT#62),isnotnull(LON#63),(NOT (LAT#62 = 0.0) OR NOT (LON#63 = 0.0))
+25/12/12 03:19:00 INFO FileSourceStrategy: Pushed Filters: 
+25/12/12 03:19:00 INFO FileSourceStrategy: Post-Scan Filters: 
+25/12/12 03:19:00 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 313.8 KiB, free 433.7 MiB)
+25/12/12 03:19:00 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 57.3 KiB, free 433.6 MiB)
+25/12/12 03:19:00 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on spark-master:36907 (size: 57.3 KiB, free: 434.3 MiB)
+25/12/12 03:19:00 INFO SparkContext: Created broadcast 10 from $anonfun$withThreadLocalCaptured$1 at <unknown>:0
+25/12/12 03:19:00 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+25/12/12 03:19:00 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at <unknown>:0
+25/12/12 03:19:00 INFO DAGScheduler: Got job 6 ($anonfun$withThreadLocalCaptured$1 at <unknown>:0) with 1 output partitions
+25/12/12 03:19:00 INFO DAGScheduler: Final stage: ResultStage 7 ($anonfun$withThreadLocalCaptured$1 at <unknown>:0)
+25/12/12 03:19:00 INFO DAGScheduler: Parents of final stage: List()
+25/12/12 03:19:00 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:19:00 INFO DAGScheduler: Submitting ResultStage 7 (MapPartitionsRDD[29] at $anonfun$withThreadLocalCaptured$1 at <unknown>:0), which has no missing parents
+25/12/12 03:19:00 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 22.8 KiB, free 433.6 MiB)
+25/12/12 03:19:00 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 11.0 KiB, free 433.6 MiB)
+25/12/12 03:19:00 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on spark-master:36907 (size: 11.0 KiB, free: 434.3 MiB)
+25/12/12 03:19:00 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:19:00 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[29] at $anonfun$withThreadLocalCaptured$1 at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+25/12/12 03:19:00 INFO TaskSchedulerImpl: Adding task set 7.0 with 1 tasks resource profile 0
+25/12/12 03:19:00 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 13) (172.18.0.5, executor 3, partition 0, ANY, 13408 bytes) 
+25/12/12 03:19:00 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 172.18.0.5:36361 (size: 11.0 KiB, free: 1048.8 MiB)
+25/12/12 03:19:00 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 172.18.0.5:36361 (size: 57.3 KiB, free: 1048.7 MiB)
+25/12/12 03:19:00 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 13) in 701 ms on 172.18.0.5 (executor 3) (1/1)
+25/12/12 03:19:00 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+25/12/12 03:19:00 INFO DAGScheduler: ResultStage 7 ($anonfun$withThreadLocalCaptured$1 at <unknown>:0) finished in 0.707 s
+25/12/12 03:19:00 INFO DAGScheduler: Job 6 is finished. Cancelling potential speculative or zombie tasks for this job
+25/12/12 03:19:00 INFO TaskSchedulerImpl: Killing all running tasks in stage 7: Stage finished
+25/12/12 03:19:00 INFO DAGScheduler: Job 6 finished: $anonfun$withThreadLocalCaptured$1 at <unknown>:0, took 0.709807 s
+25/12/12 03:19:00 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 942.0 B, free 433.6 MiB)
+25/12/12 03:19:00 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on spark-master:36907 (size: 942.0 B, free: 434.3 MiB)
+25/12/12 03:19:00 INFO SparkContext: Created broadcast 12 from $anonfun$withThreadLocalCaptured$1 at <unknown>:0
+25/12/12 03:19:00 INFO FileSourceStrategy: Pushed Filters: IsNotNull(LAT),IsNotNull(LON),Or(Not(EqualTo(LAT,0.0)),Not(EqualTo(LON,0.0)))
+25/12/12 03:19:00 INFO FileSourceStrategy: Post-Scan Filters: isnotnull(LAT#62),isnotnull(LON#63),(NOT (LAT#62 = 0.0) OR NOT (LON#63 = 0.0))
+25/12/12 03:19:00 INFO CodeGenerator: Code generated in 16.751625 ms
+25/12/12 03:19:00 INFO CodeGenerator: Code generated in 8.30275 ms
+25/12/12 03:19:00 INFO CodeGenerator: Code generated in 9.991333 ms
+25/12/12 03:19:00 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 313.8 KiB, free 433.3 MiB)
+25/12/12 03:19:00 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 57.3 KiB, free 433.2 MiB)
+25/12/12 03:19:00 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on spark-master:36907 (size: 57.3 KiB, free: 434.2 MiB)
+25/12/12 03:19:00 INFO SparkContext: Created broadcast 13 from showString at <unknown>:0
+25/12/12 03:19:00 INFO FileSourceScanExec: Planning scan with bin packing, max size: 118509402 bytes, open cost is considered as scanning 4194304 bytes.
+25/12/12 03:19:01 INFO DAGScheduler: Registering RDD 38 (showString at <unknown>:0) as input to shuffle 1
+25/12/12 03:19:01 INFO DAGScheduler: Got map stage job 7 (showString at <unknown>:0) with 8 output partitions
+25/12/12 03:19:01 INFO DAGScheduler: Final stage: ShuffleMapStage 8 (showString at <unknown>:0)
+25/12/12 03:19:01 INFO DAGScheduler: Parents of final stage: List()
+25/12/12 03:19:01 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:19:01 INFO DAGScheduler: Submitting ShuffleMapStage 8 (MapPartitionsRDD[38] at showString at <unknown>:0), which has no missing parents
+25/12/12 03:19:01 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 51.2 KiB, free 433.2 MiB)
+25/12/12 03:19:01 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 23.4 KiB, free 433.2 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on spark-master:36907 (size: 23.4 KiB, free: 434.2 MiB)
+25/12/12 03:19:01 INFO SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:19:01 INFO DAGScheduler: Submitting 8 missing tasks from ShuffleMapStage 8 (MapPartitionsRDD[38] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+25/12/12 03:19:01 INFO TaskSchedulerImpl: Adding task set 8.0 with 8 tasks resource profile 0
+25/12/12 03:19:01 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 14) (172.18.0.5, executor 1, partition 0, ANY, 13416 bytes) 
+25/12/12 03:19:01 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 15) (172.18.0.5, executor 2, partition 1, ANY, 13416 bytes) 
+25/12/12 03:19:01 INFO TaskSetManager: Starting task 2.0 in stage 8.0 (TID 16) (172.18.0.5, executor 4, partition 2, ANY, 13416 bytes) 
+25/12/12 03:19:01 INFO TaskSetManager: Starting task 3.0 in stage 8.0 (TID 17) (172.18.0.5, executor 7, partition 3, ANY, 13416 bytes) 
+25/12/12 03:19:01 INFO TaskSetManager: Starting task 4.0 in stage 8.0 (TID 18) (172.18.0.5, executor 6, partition 4, ANY, 13416 bytes) 
+25/12/12 03:19:01 INFO TaskSetManager: Starting task 5.0 in stage 8.0 (TID 19) (172.18.0.5, executor 0, partition 5, ANY, 13416 bytes) 
+25/12/12 03:19:01 INFO TaskSetManager: Starting task 6.0 in stage 8.0 (TID 20) (172.18.0.5, executor 5, partition 6, ANY, 13416 bytes) 
+25/12/12 03:19:01 INFO TaskSetManager: Starting task 7.0 in stage 8.0 (TID 21) (172.18.0.5, executor 3, partition 7, ANY, 13540 bytes) 
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.18.0.5:42241 (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.18.0.5:36361 (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.18.0.5:39749 (size: 23.4 KiB, free: 1048.8 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.18.0.5:46139 (size: 23.4 KiB, free: 1048.8 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.18.0.5:37593 (size: 23.4 KiB, free: 1048.8 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.18.0.5:44427 (size: 23.4 KiB, free: 1048.8 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.18.0.5:35983 (size: 23.4 KiB, free: 1048.8 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.18.0.5:41107 (size: 23.4 KiB, free: 1048.8 MiB)
+25/12/12 03:19:01 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.18.0.5:36361 (size: 942.0 B, free: 1048.7 MiB)
+25/12/12 03:19:02 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.18.0.5:36361 (size: 57.3 KiB, free: 1048.7 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.18.0.5:44427 (size: 942.0 B, free: 1048.8 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.18.0.5:42241 (size: 942.0 B, free: 1048.7 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.18.0.5:46139 (size: 942.0 B, free: 1048.8 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.18.0.5:39749 (size: 942.0 B, free: 1048.8 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.18.0.5:41107 (size: 942.0 B, free: 1048.8 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.18.0.5:35983 (size: 942.0 B, free: 1048.8 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.18.0.5:37593 (size: 942.0 B, free: 1048.8 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.18.0.5:42241 (size: 57.3 KiB, free: 1048.6 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.18.0.5:44427 (size: 57.3 KiB, free: 1048.7 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.18.0.5:46139 (size: 57.3 KiB, free: 1048.7 MiB)
+25/12/12 03:19:03 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.18.0.5:39749 (size: 57.3 KiB, free: 1048.7 MiB)
+25/12/12 03:19:04 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.18.0.5:37593 (size: 57.3 KiB, free: 1048.7 MiB)
+25/12/12 03:19:04 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.18.0.5:41107 (size: 57.3 KiB, free: 1048.7 MiB)
+25/12/12 03:19:04 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.18.0.5:35983 (size: 57.3 KiB, free: 1048.7 MiB)
+25/12/12 03:19:35 INFO TaskSetManager: Finished task 7.0 in stage 8.0 (TID 21) in 34181 ms on 172.18.0.5 (executor 3) (1/8)
+25/12/12 03:19:38 INFO TaskSetManager: Finished task 6.0 in stage 8.0 (TID 20) in 37095 ms on 172.18.0.5 (executor 5) (2/8)
+25/12/12 03:19:38 INFO TaskSetManager: Finished task 5.0 in stage 8.0 (TID 19) in 37647 ms on 172.18.0.5 (executor 0) (3/8)
+25/12/12 03:19:38 INFO TaskSetManager: Finished task 2.0 in stage 8.0 (TID 16) in 37761 ms on 172.18.0.5 (executor 4) (4/8)
+25/12/12 03:19:39 INFO TaskSetManager: Finished task 3.0 in stage 8.0 (TID 17) in 37993 ms on 172.18.0.5 (executor 7) (5/8)
+25/12/12 03:19:39 INFO TaskSetManager: Finished task 4.0 in stage 8.0 (TID 18) in 38265 ms on 172.18.0.5 (executor 6) (6/8)
+25/12/12 03:19:39 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 15) in 38426 ms on 172.18.0.5 (executor 2) (7/8)
+25/12/12 03:19:39 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 14) in 38865 ms on 172.18.0.5 (executor 1) (8/8)
+25/12/12 03:19:39 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+25/12/12 03:19:39 INFO DAGScheduler: ShuffleMapStage 8 (showString at <unknown>:0) finished in 38.883 s
+25/12/12 03:19:39 INFO DAGScheduler: looking for newly runnable stages
+25/12/12 03:19:39 INFO DAGScheduler: running: Set()
+25/12/12 03:19:39 INFO DAGScheduler: waiting: Set()
+25/12/12 03:19:39 INFO DAGScheduler: failed: Set()
+25/12/12 03:19:40 INFO ShufflePartitionsUtil: For shuffle(1), advisory target size: 67108864, actual target size 11430976, minimum partition size: 1048576
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_9_piece0 on spark-master:36907 in memory (size: 15.4 KiB, free: 434.2 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_9_piece0 on 172.18.0.5:42241 in memory (size: 15.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_8_piece0 on spark-master:36907 in memory (size: 57.4 KiB, free: 434.3 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_8_piece0 on 172.18.0.5:42241 in memory (size: 57.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on spark-master:36907 in memory (size: 23.4 KiB, free: 434.3 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.18.0.5:37593 in memory (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.18.0.5:44427 in memory (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.18.0.5:35983 in memory (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.18.0.5:42241 in memory (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.18.0.5:46139 in memory (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.18.0.5:41107 in memory (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.18.0.5:36361 in memory (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.18.0.5:39749 in memory (size: 23.4 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_11_piece0 on spark-master:36907 in memory (size: 11.0 KiB, free: 434.3 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Removed broadcast_11_piece0 on 172.18.0.5:36361 in memory (size: 11.0 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO CodeGenerator: Code generated in 232.236083 ms
+25/12/12 03:19:40 INFO CodeGenerator: Code generated in 7.856375 ms
+25/12/12 03:19:40 INFO DAGScheduler: Registering RDD 44 (showString at <unknown>:0) as input to shuffle 2
+25/12/12 03:19:40 INFO DAGScheduler: Got map stage job 8 (showString at <unknown>:0) with 8 output partitions
+25/12/12 03:19:40 INFO DAGScheduler: Final stage: ShuffleMapStage 10 (showString at <unknown>:0)
+25/12/12 03:19:40 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 9)
+25/12/12 03:19:40 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:19:40 INFO DAGScheduler: Submitting ShuffleMapStage 10 (MapPartitionsRDD[44] at showString at <unknown>:0), which has no missing parents
+25/12/12 03:19:40 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 72.4 KiB, free 433.6 MiB)
+25/12/12 03:19:40 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 32.5 KiB, free 433.6 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on spark-master:36907 (size: 32.5 KiB, free: 434.3 MiB)
+25/12/12 03:19:40 INFO SparkContext: Created broadcast 15 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:19:40 INFO DAGScheduler: Submitting 8 missing tasks from ShuffleMapStage 10 (MapPartitionsRDD[44] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+25/12/12 03:19:40 INFO TaskSchedulerImpl: Adding task set 10.0 with 8 tasks resource profile 0
+25/12/12 03:19:40 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 22) (172.18.0.5, executor 5, partition 0, PROCESS_LOCAL, 12786 bytes) 
+25/12/12 03:19:40 INFO TaskSetManager: Starting task 1.0 in stage 10.0 (TID 23) (172.18.0.5, executor 1, partition 1, PROCESS_LOCAL, 12786 bytes) 
+25/12/12 03:19:40 INFO TaskSetManager: Starting task 2.0 in stage 10.0 (TID 24) (172.18.0.5, executor 6, partition 2, PROCESS_LOCAL, 12786 bytes) 
+25/12/12 03:19:40 INFO TaskSetManager: Starting task 3.0 in stage 10.0 (TID 25) (172.18.0.5, executor 3, partition 3, PROCESS_LOCAL, 12786 bytes) 
+25/12/12 03:19:40 INFO TaskSetManager: Starting task 4.0 in stage 10.0 (TID 26) (172.18.0.5, executor 2, partition 4, PROCESS_LOCAL, 12786 bytes) 
+25/12/12 03:19:40 INFO TaskSetManager: Starting task 5.0 in stage 10.0 (TID 27) (172.18.0.5, executor 0, partition 5, PROCESS_LOCAL, 12786 bytes) 
+25/12/12 03:19:40 INFO TaskSetManager: Starting task 6.0 in stage 10.0 (TID 28) (172.18.0.5, executor 7, partition 6, PROCESS_LOCAL, 12786 bytes) 
+25/12/12 03:19:40 INFO TaskSetManager: Starting task 7.0 in stage 10.0 (TID 29) (172.18.0.5, executor 4, partition 7, PROCESS_LOCAL, 12786 bytes) 
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.18.0.5:42241 (size: 32.5 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.18.0.5:46139 (size: 32.5 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.18.0.5:44427 (size: 32.5 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.18.0.5:41107 (size: 32.5 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.18.0.5:37593 (size: 32.5 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.18.0.5:36361 (size: 32.5 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.18.0.5:39749 (size: 32.5 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.18.0.5:35983 (size: 32.5 KiB, free: 1048.7 MiB)
+25/12/12 03:19:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:33200
+25/12/12 03:19:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:33214
+25/12/12 03:19:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:33124
+25/12/12 03:19:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:33244
+25/12/12 03:19:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:33238
+25/12/12 03:19:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:33188
+25/12/12 03:19:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:33202
+25/12/12 03:19:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.18.0.5:33226
+25/12/12 03:19:43 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 22) in 2923 ms on 172.18.0.5 (executor 5) (1/8)
+25/12/12 03:19:43 INFO TaskSetManager: Finished task 1.0 in stage 10.0 (TID 23) in 3099 ms on 172.18.0.5 (executor 1) (2/8)
+25/12/12 03:19:43 INFO TaskSetManager: Finished task 4.0 in stage 10.0 (TID 26) in 3173 ms on 172.18.0.5 (executor 2) (3/8)
+25/12/12 03:19:43 INFO TaskSetManager: Finished task 2.0 in stage 10.0 (TID 24) in 3307 ms on 172.18.0.5 (executor 6) (4/8)
+25/12/12 03:19:43 INFO TaskSetManager: Finished task 3.0 in stage 10.0 (TID 25) in 3386 ms on 172.18.0.5 (executor 3) (5/8)
+25/12/12 03:19:43 INFO TaskSetManager: Finished task 5.0 in stage 10.0 (TID 27) in 3479 ms on 172.18.0.5 (executor 0) (6/8)
+25/12/12 03:19:43 INFO TaskSetManager: Finished task 7.0 in stage 10.0 (TID 29) in 3493 ms on 172.18.0.5 (executor 4) (7/8)
+25/12/12 03:19:44 INFO TaskSetManager: Finished task 6.0 in stage 10.0 (TID 28) in 3790 ms on 172.18.0.5 (executor 7) (8/8)
+25/12/12 03:19:44 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+25/12/12 03:19:44 INFO DAGScheduler: ShuffleMapStage 10 (showString at <unknown>:0) finished in 3.803 s
+25/12/12 03:19:44 INFO DAGScheduler: looking for newly runnable stages
+25/12/12 03:19:44 INFO DAGScheduler: running: Set()
+25/12/12 03:19:44 INFO DAGScheduler: waiting: Set()
+25/12/12 03:19:44 INFO DAGScheduler: failed: Set()
+25/12/12 03:19:44 INFO ShufflePartitionsUtil: For shuffle(2), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+25/12/12 03:19:44 INFO CodeGenerator: Code generated in 49.356084 ms
+25/12/12 03:19:44 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+25/12/12 03:19:44 INFO CodeGenerator: Code generated in 22.505041 ms
+25/12/12 03:19:44 INFO SparkContext: Starting job: showString at <unknown>:0
+25/12/12 03:19:44 INFO DAGScheduler: Got job 9 (showString at <unknown>:0) with 1 output partitions
+25/12/12 03:19:44 INFO DAGScheduler: Final stage: ResultStage 13 (showString at <unknown>:0)
+25/12/12 03:19:44 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 12)
+25/12/12 03:19:44 INFO DAGScheduler: Missing parents: List()
+25/12/12 03:19:44 INFO DAGScheduler: Submitting ResultStage 13 (MapPartitionsRDD[48] at showString at <unknown>:0), which has no missing parents
+25/12/12 03:19:44 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 71.6 KiB, free 433.5 MiB)
+25/12/12 03:19:44 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 31.6 KiB, free 433.5 MiB)
+25/12/12 03:19:44 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on spark-master:36907 (size: 31.6 KiB, free: 434.2 MiB)
+25/12/12 03:19:44 INFO SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:1580
+25/12/12 03:19:44 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 13 (MapPartitionsRDD[48] at showString at <unknown>:0) (first 15 tasks are for partitions Vector(0))
+25/12/12 03:19:44 INFO TaskSchedulerImpl: Adding task set 13.0 with 1 tasks resource profile 0
+25/12/12 03:19:44 INFO TaskSetManager: Starting task 0.0 in stage 13.0 (TID 30) (172.18.0.5, executor 4, partition 0, PROCESS_LOCAL, 12797 bytes) 
+25/12/12 03:19:44 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on 172.18.0.5:35983 (size: 31.6 KiB, free: 1048.7 MiB)
+25/12/12 03:19:44 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 172.18.0.5:33226
+25/12/12 03:19:44 INFO TaskSetManager: Finished task 0.0 in stage 13.0 (TID 30) in 146 ms on 172.18.0.5 (executor 4) (1/1)
+25/12/12 03:19:44 INFO TaskSchedulerImpl: Removed TaskSet 13.0, whose tasks have all completed, from pool 
+25/12/12 03:19:44 INFO DAGScheduler: ResultStage 13 (showString at <unknown>:0) finished in 0.162 s
+25/12/12 03:19:44 INFO DAGScheduler: Job 9 is finished. Cancelling potential speculative or zombie tasks for this job
+25/12/12 03:19:44 INFO TaskSchedulerImpl: Killing all running tasks in stage 13: Stage finished
+25/12/12 03:19:44 INFO DAGScheduler: Job 9 finished: showString at <unknown>:0, took 0.176107 s
+25/12/12 03:19:44 INFO CodeGenerator: Code generated in 11.924875 ms
+25/12/12 03:19:44 INFO CodeGenerator: Code generated in 10.533375 ms
++----------------+-------------------+------+
+|DIVISION        |average_distance_km|count |
++----------------+-------------------+------+
+|HOLLYWOOD       |2.0765095103355296 |225515|
+|VAN NUYS        |2.953396717879426  |211130|
+|SOUTHWEST       |2.1914968538633475 |189565|
+|WILSHIRE        |2.5927409026068218 |187061|
+|77TH STREET     |1.7169458432847726 |172558|
+|OLYMPIC         |1.725358011158251  |172353|
+|NORTH HOLLYWOOD |2.643170658048241  |168655|
+|PACIFIC         |3.8533669644567894 |162514|
+|CENTRAL         |0.9932142583673353 |154952|
+|SOUTHEAST       |2.4224989093319533 |153746|
+|RAMPART         |1.5354886102456773 |153690|
+|TOPANGA         |3.297711274147524  |141070|
+|WEST VALLEY     |3.0387814764536634 |139820|
+|FOOTHILL        |4.251453607794118  |135381|
+|HARBOR          |3.7024499558630892 |127370|
+|HOLLENBECK      |2.677468898682568  |116558|
+|WEST LOS ANGELES|2.789756644990114  |116308|
+|NEWTON          |1.63500096601513   |111628|
+|NORTHEAST       |3.6226179400707776 |108549|
+|MISSION         |3.684524129130285  |105331|
++----------------+-------------------+------+
+only showing top 20 rows
+
+Execution time (q4 realistic distances): instances=2, cores=1, memory=2g: 59.10 seconds
+25/12/12 03:19:44 INFO SparkContext: SparkContext is stopping with exitCode 0.
+25/12/12 03:19:44 INFO SparkUI: Stopped Spark web UI at http://spark-master:4040
+25/12/12 03:19:44 INFO StandaloneSchedulerBackend: Shutting down all executors
+25/12/12 03:19:44 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+25/12/12 03:19:44 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+25/12/12 03:19:44 INFO MemoryStore: MemoryStore cleared
+25/12/12 03:19:44 INFO BlockManager: BlockManager stopped
+25/12/12 03:19:44 INFO BlockManagerMaster: BlockManagerMaster stopped
+25/12/12 03:19:44 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+25/12/12 03:19:45 INFO SparkContext: Successfully stopped SparkContext
+25/12/12 03:19:45 INFO ShutdownHookManager: Shutdown hook called
+25/12/12 03:19:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-c9ba84e6-8ab9-42d8-af54-16094a9b19ab
+25/12/12 03:19:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b/pyspark-7b9690de-7965-4dd0-9099-a00b658a0e53
+25/12/12 03:19:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-690bd1f1-dd08-48cf-96d5-916ccbc2735b

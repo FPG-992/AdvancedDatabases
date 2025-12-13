@@ -1,0 +1,16 @@
+==================================================
+  EXECUTION TIMES (Extracted from Logs)           
+==================================================
+q1_df_no_udf.log:Execution time for create_age_groups_no_udf: 24.90536 seconds
+q1_df_udf.log:Execution time for create_age_groups_with_udf: 22.41551 seconds
+q1_rdd.log:Execution time for create_age_groups_rdd_api: 24.01986 seconds
+q3_df_broadcast.log:Execution time for df: 19.19052 seconds
+q3_df_cartesian.log:Execution time for df: 18.21317 seconds
+q3_df_merge.log:Execution time for df: 21.58386 seconds
+q3_df_shuffle_hash.log:Execution time for df: 21.22242 seconds
+q4_cfg1.log:Execution time (q4 realistic distances): instances=2, cores=1, memory=2g: 59.10 seconds
+q4_cfg2.log:Execution time (q4 realistic distances): instances=2, cores=2, memory=4g: 36.11 seconds
+q4_cfg3.log:Execution time (q4 realistic distances): instances=2, cores=4, memory=8g: 24.47 seconds
+q5_cfg1.log:Execution time for q5 with 2 executors, 4 cores, 8g memory: 119.06206 seconds
+q5_cfg2.log:Execution time for q5 with 4 executors, 2 cores, 4g memory: 118.02888 seconds
+q5_cfg3.log:Execution time for q5 with 8 executors, 1 cores, 2g memory: 143.94116 seconds
