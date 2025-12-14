@@ -140,7 +140,7 @@ def run_q4(spark: SparkSession):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Query 5")
+    parser = argparse.ArgumentParser(description="Query 4")
     parser.add_argument("--instances", type=int, default=2)
     parser.add_argument("--cores", type=int, default=1)
     parser.add_argument("--memory", type=str, default="2g")
