@@ -1,10 +1,10 @@
 Standard Operating Procedure for running the app.
 Requirements: 
-- Docker Installed
-- macOS
+- Docker Installed with resource allocation of 10 cpu cores and 16GB Ram
+- macOS arm64 
 1. Git clone the repo
 2. CD into the repo
-3. Place a folder called project inside the root directory of the cloned repo with the data in the following structure:
+3. Place a folder called project_data inside the root directory of the cloned repo with the data in the following structure:
     project_data
     - LA_Crime_Data
     - - LA_Crime_Data_2010_2019.csv
