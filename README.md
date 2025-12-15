@@ -1,6 +1,7 @@
 Standard Operating Procedure for running the app.
-Requirements: Docker Installed and running
-The following has been tested using macOS operating system.
+Requirements: 
+- Docker Installed
+- macOS
 1. Git clone the repo
 2. CD into the repo
 3. Place a folder called project inside the root directory of the cloned repo with the data in the following structure:
